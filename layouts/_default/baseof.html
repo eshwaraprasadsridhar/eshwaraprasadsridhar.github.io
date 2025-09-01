@@ -31,8 +31,8 @@
         header.site-header{border-bottom:1px solid var(--border-color);background:var(--bg-color);position:sticky;top:0;z-index:20}
     .header-inner{display:none}
     .identity{display:none}
-    .header-grid{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;gap:.5rem 1rem;align-items:center}
-    /* brand removed per request */
+    .header-grid{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:.5rem 1rem;align-items:center}
+    .brand{display:flex;align-items:center;gap:.75rem}
     .title h1{font-weight:700;font-size:1.2rem}
         .title .subtitle{font-size:.95rem;color:var(--text-secondary)}
         nav.top-nav ul{display:flex;gap:1rem;list-style:none}
@@ -88,6 +88,9 @@
     
     <header class="site-header">
         <div class="container header-grid">
+            <div class="brand">
+                <div class="logo-text">ESHWARA PRASAD SRIDHAR</div>
+            </div>
             <div class="header-controls">
                 <nav class="top-nav" aria-label="Primary">
                     <ul>
