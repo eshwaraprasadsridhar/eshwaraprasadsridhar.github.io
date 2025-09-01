@@ -27,7 +27,7 @@
         body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;color:var(--text-color);background:var(--bg-color);line-height:1.7}
         a{color:var(--accent-color);text-decoration:none}
         a:hover{text-decoration:underline}
-    .container{max-width:980px;margin:0 auto;padding:2rem 1rem}
+    .container{max-width:980px;margin:0 auto;padding:1.5rem 1rem}
         header.site-header{border-bottom:1px solid var(--border-color);background:var(--bg-color);position:sticky;top:0;z-index:20}
     .header-inner{display:none}
     .identity{display:none}
@@ -64,7 +64,8 @@
     .reveal.show{opacity:1;transform:none}
         footer.site-footer{border-top:1px solid var(--border-color);color:var(--text-secondary);padding-top:1.5rem;margin-top:3rem;text-align:center}
         /* Content headings similar to reference */
-        .content h2{font-size:1.5rem;font-weight:600;margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-color)}
+        .content h2{font-size:1.5rem;font-weight:600;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-color)}
+        .content > h2:first-of-type{margin-top:.75rem}
         .content h3{font-size:1.1rem;font-weight:600;margin:1rem 0 .5rem}
         .content p{margin:.75rem 0;text-align:justify}
         .news-item{padding:1rem;border:1px solid var(--border-color);border-radius:.5rem;background:var(--card-bg);margin:.75rem 0}
@@ -82,6 +83,8 @@
     .mobile-toc .toc-body{margin-top:.5rem;max-height:50vh;overflow:auto}
     .mobile-toc a{color:var(--text-secondary)}
     .mobile-toc a.active{color:var(--text-color);font-weight:600}
+    /* Logo text emphasis */
+    .logo-text{font-weight:900;letter-spacing:.5px;font-size:1.3rem}
     </style>
 </head>
 <body>
@@ -108,7 +111,7 @@
                 </button>
             </div>
             <div class="header-meta">
-                PhD Student · <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/imse" target="_blank" rel="noopener">UTA IMSE</a>
+                PhD Student · <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/industrial" target="_blank" rel="noopener">UTA IMSE</a>
                 · <a href="mailto:exs3645@mavs.uta.edu">exs3645@mavs.uta.edu</a>
                 · <a href="https://scholar.google.com/citations?user=6GXB3qEAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
                 · <a href="https://github.com/eshwaraprasadsridhar" target="_blank" rel="noopener">GitHub</a>
@@ -118,8 +121,8 @@
     </header>
     
     <main class="main">
-        <div class="container">
-            <!-- Mobile ToC (collapsed) -->
+        <div class="container page">
+            <!-- Mobile ToC (collapsed) shown only on small screens -->
             <div class="mobile-toc" id="mobileToc">
                 <details>
                     <summary>On this page</summary>
@@ -137,8 +140,6 @@
                     </div>
                 </details>
             </div>
-        </div>
-        <div class="container page">
             <div class="page-main content">
                 <div class="reveal">
                     {{ block "main" . }}{{ end }}
