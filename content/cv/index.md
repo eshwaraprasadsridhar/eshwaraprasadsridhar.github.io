@@ -18,26 +18,23 @@ Last updated: September 1, 2025
 Department of Industrial, Manufacturing, and Systems Engineering  
 The University of Texas at Arlington
 
-📧 sridhar.e@northeastern.edu | 📞 +1 (682) 433-9624 | 📍 Arlington, TX  
+📧 exs3645@mavs.uta.edu | 📞 +1 (682) 433-9624 | 📍 Arlington, TX  
 🔗 [LinkedIn](https://www.linkedin.com/in/eshwaraprasad/) | 🆔 [ORCID](https://orcid.org/eshwaraprasadsridhar) | ⚡ [GitHub](https://github.com/eshwaraprasadsridhar) | 🎓 [Google Scholar](https://scholar.google.com/citations?user=6GXB3qEAAAAJ&hl=en)
 
 ---
 
 ## Education
 
-**PhD in Industrial Engineering** | *In Progress (2023-)*  
+**PhD in Industrial Engineering** | *In Progress (2024-Current)*  
 *Human Factors and Human-Computer Interaction Focus*  
 The University of Texas at Arlington, Texas, USA  
 *Research Focus: Human-AI Teaming, Wearable Robotics, Teleoperation Systems*
 
 **Master of Science in Industrial Engineering** | *May 2024*  
-The University of Texas at Arlington, Texas, USA  
-GPA: 3.9/4.0  
-*Thesis: Design and Evaluation of Soft Wearable Robotic Systems for Human Augmentation*
+The University of Texas at Arlington, Texas, USA
 
 **Bachelor of Technology in Mechatronics Engineering** | *May 2020*  
-SRM Institute of Science and Technology, Chennai, India  
-*Concentration: Robotics and Automation Systems*
+SRM Institute of Science and Technology, Chennai, India
 
 ---
 

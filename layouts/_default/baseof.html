@@ -31,14 +31,23 @@
         header.site-header{border-bottom:1px solid var(--border-color);background:var(--bg-color);position:sticky;top:0;z-index:20}
         .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
         .identity{display:flex;align-items:center;gap:1rem}
-        .avatar{width:64px;height:64px;border-radius:50%;overflow:hidden;background:#222;display:flex;align-items:center;justify-content:center}
-        .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-        .title h1{font-weight:600;font-size:1.5rem}
+    .avatar{display:none}
+    .logo-text{font-weight:800;letter-spacing:.5px;font-size:1.3rem}
+    .title h1{font-weight:700;font-size:1.4rem}
         .title .subtitle{font-size:.95rem;color:var(--text-secondary)}
         nav.top-nav ul{display:flex;gap:1rem;list-style:none}
         nav.top-nav a{display:block;padding:.5rem .75rem;border-radius:.5rem}
         main.main{padding-top:1rem}
-        .theme-toggle{border:1px solid var(--border-color);background:var(--card-bg);border-radius:.5rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    /* Slider theme toggle */
+    .toggle{position:relative;width:56px;height:28px;background:var(--card-bg);border:1px solid var(--border-color);border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;padding:2px}
+    .toggle .knob{width:24px;height:24px;border-radius:50%;background:var(--text-secondary);transform:translateX(0);transition:transform .2s ease, background .2s ease}
+    [data-theme="dark"] .toggle .knob{transform:translateX(28px);background:var(--accent-color)}
+    .toggle .icon{position:absolute;width:16px;height:16px;opacity:.75}
+    .toggle .icon.sun{left:8px}
+    .toggle .icon.moon{right:8px}
+    /* Scroll-in animation */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .4s ease, transform .4s ease}
+    .reveal.show{opacity:1;transform:none}
         footer.site-footer{border-top:1px solid var(--border-color);color:var(--text-secondary);padding-top:1.5rem;margin-top:3rem;text-align:center}
         /* Content headings similar to reference */
         .content h2{font-size:1.5rem;font-weight:600;margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-color)}
@@ -52,9 +61,7 @@
     <header class="site-header">
         <div class="container header-inner">
             <div class="identity">
-                <div class="avatar">
-                    <img src="/images/eps-logo.svg" alt="EPS">
-                </div>
+                <div class="logo-text">ESHWARA PRASAD SRIDHAR</div>
                 <div class="title">
                     <h1>Eshwara Prasad Sridhar</h1>
                     <div class="subtitle">
@@ -76,13 +83,19 @@
                         <li><a href="/#publications">Publications</a></li>
                     </ul>
                 </nav>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><span class="theme-icon">🌙</span></button>
+                <button class="toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme" onclick="toggleTheme()">
+                    <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.54 6.46-1.42-1.42M7.88 7.88 6.46 6.46m10.12 0-1.42 1.42M7.88 16.12 6.46 17.54"/></svg>
+                    <svg class="icon moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <span class="knob"></span>
+                </button>
             </div>
         </div>
     </header>
     <main class="main">
         <div class="container content">
-            {{ block "main" . }}{{ end }}
+            <div class="reveal">
+                {{ block "main" . }}{{ end }}
+            </div>
         </div>
     </main>
     <footer class="site-footer">
@@ -91,22 +104,24 @@
         </div>
     </footer>
     <script>
-        function toggleTheme(){
+    function toggleTheme(){
             const html=document.documentElement;
             const cur=html.getAttribute('data-theme');
             const next=cur==='dark'?'light':'dark';
             html.setAttribute('data-theme',next);
             localStorage.setItem('theme',next);
-            const icon=document.querySelector('.theme-icon');
-            if(icon) icon.textContent= next==='dark'?'☀️':'🌙';
         }
         (function init(){
             const saved=localStorage.getItem('theme');
             const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
             const theme=saved || (prefersDark? 'dark':'light');
             document.documentElement.setAttribute('data-theme', theme);
-            const icon=document.querySelector('.theme-icon');
-            if(icon) icon.textContent= theme==='dark'?'☀️':'🌙';
+            // Scroll reveal
+            const els=document.querySelectorAll('.reveal');
+            const io=new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+            },{threshold:0.1});
+            els.forEach(el=>io.observe(el));
         })();
     </script>
 </body>
