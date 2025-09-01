@@ -12,7 +12,16 @@
             --primary-color: #2c3e50;
             --accent-color: #3498db;
             --text-color: #333;
-            --text-secondary: #666;
+                  <h1>Eshwara Prasad Sridhar</h1>
+                <div class="subtitle">PhD Student</div>
+                <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/imse" class="university" target="_blank">Department of IMSE, UT Arlington</a>
+                
+                <div class="social-links">
+                    <a href="mailto:exs3645@mavs.uta.edu" aria-label="Email" title="Email">✉</a>
+                    <a href="https://scholar.google.com/citations?user=6GXB3qEAAAAJ&hl=en" target="_blank" aria-label="Google Scholar" title="Google Scholar">🎓</a>
+                    <a href="https://github.com/eshwaraprasadsridhar" target="_blank" aria-label="GitHub" title="GitHub">⚡</a>
+                    <a href="https://www.linkedin.com/in/eshwaraprasad/" target="_blank" aria-label="LinkedIn" title="LinkedIn">💼</a>
+                </div>--text-secondary: #666;
             --bg-color: #ffffff;
             --sidebar-bg: #f8f9fa;
             --card-bg: #ffffff;
@@ -22,16 +31,16 @@
         }
 
         [data-theme="dark"] {
-            --primary-color: #ecf0f1;
-            --accent-color: #5dade2;
-            --text-color: #ecf0f1;
-            --text-secondary: #bdc3c7;
-            --bg-color: #1a1a1a;
-            --sidebar-bg: #2c2c2c;
-            --card-bg: #2c2c2c;
+            --primary-color: #ffffff;
+            --accent-color: #cccccc;
+            --text-color: #ffffff;
+            --text-secondary: #cccccc;
+            --bg-color: #000000;
+            --sidebar-bg: #1a1a1a;
+            --card-bg: #2a2a2a;
             --border-color: #404040;
-            --shadow: 0 2px 10px rgba(0,0,0,0.3);
-            --shadow-hover: 0 4px 20px rgba(0,0,0,0.4);
+            --shadow: 0 2px 10px rgba(0,0,0,0.5);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.6);
         }
 
         /* Modern reset and base styles */
@@ -57,20 +66,71 @@
         /* Layout container */
         .layout {
             display: flex;
+            flex-direction: column;
             min-height: 100vh;
+        }
+
+        /* Top Header Navigation */
+        .header {
+            background: var(--sidebar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        /* Main content layout */
+        .content-wrapper {
+            display: flex;
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            gap: 3rem;
         }
 
         /* Sidebar */
         .sidebar {
-            width: 320px;
+            width: 300px;
             background: var(--sidebar-bg);
             border-right: 1px solid var(--border-color);
-            position: fixed;
-            height: 100vh;
-            overflow-y: auto;
+            border-radius: 16px;
             padding: 2rem 1.5rem;
-            z-index: 100;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow);
         }
 
         .profile {
@@ -243,13 +303,11 @@
         /* Main content */
         .main-content {
             flex: 1;
-            margin-left: 320px;
-            padding: 2rem 3rem;
-            max-width: 1000px;
+            max-width: 800px;
         }
 
         .content {
-            max-width: 800px;
+            max-width: 100%;
         }
 
         /* Typography */
@@ -450,34 +508,24 @@
 
         /* Responsive design */
         @media (max-width: 1024px) {
+            .content-wrapper {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
             .sidebar {
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
+                width: 100%;
+                position: relative;
+                top: 0;
             }
             
-            .sidebar.open {
-                transform: translateX(0);
-            }
-            
-            .main-content {
-                margin-left: 0;
-                padding: 1rem 2rem;
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
             }
             
             .mobile-menu-button {
-                display: block;
-                position: fixed;
-                top: 1rem;
-                left: 1rem;
-                z-index: 101;
-                background: var(--accent-color);
-                color: white;
-                border: none;
-                padding: 0.75rem;
-                border-radius: 12px;
-                cursor: pointer;
-                box-shadow: var(--shadow);
-                font-size: 1.2rem;
+                display: none;
             }
         }
 
@@ -486,8 +534,12 @@
         }
 
         @media (max-width: 768px) {
-            .main-content {
+            .header {
                 padding: 1rem;
+            }
+            
+            .header-nav {
+                gap: 1rem;
             }
             
             .content h1 {
@@ -499,7 +551,7 @@
             }
 
             .sidebar {
-                width: 280px;
+                width: 100%;
             }
         }
 

@@ -9,24 +9,26 @@ draft: false
 ---
 
 <div class="cv-updated">
-Last updated: January 31, 2025
+Last updated: September 1, 2025
 </div>
 
 # Eshwara Prasad Sridhar
-**PhD Student in Human Factors and Human-Computer Interaction**  
-College of Engineering  
-Northeastern University
+**PhD Student in Industrial Engineering**  
+*Human Factors and Human-Computer Interaction Focus*  
+Department of Industrial, Manufacturing, and Systems Engineering  
+The University of Texas at Arlington
 
-📧 sridhar.e@northeastern.edu | 📞 +1 (682) 433-9624 | 📍 Boston, MA  
-🔗 [LinkedIn](https://linkedin.com/in/eshwaraprasadsridhar) | 🆔 [ORCID](https://orcid.org/eshwaraprasadsridhar) | ⚡ [GitHub](https://github.com/eshwaraprasadsridhar)
+📧 sridhar.e@northeastern.edu | 📞 +1 (682) 433-9624 | 📍 Arlington, TX  
+🔗 [LinkedIn](https://www.linkedin.com/in/eshwaraprasad/) | 🆔 [ORCID](https://orcid.org/eshwaraprasadsridhar) | ⚡ [GitHub](https://github.com/eshwaraprasadsridhar) | 🎓 [Google Scholar](https://scholar.google.com/citations?user=6GXB3qEAAAAJ&hl=en)
 
 ---
 
 ## Education
 
-**Ph.D. in Human Factors and Human-Computer Interaction** | *In Progress (2025-)*  
-Northeastern University, Boston, MA, USA  
-*Research Focus: Human-AI Teaming, Conversational Agents, Trust in AI Systems*
+**PhD in Industrial Engineering** | *In Progress (2023-)*  
+*Human Factors and Human-Computer Interaction Focus*  
+The University of Texas at Arlington, Texas, USA  
+*Research Focus: Human-AI Teaming, Wearable Robotics, Teleoperation Systems*
 
 **Master of Science in Industrial Engineering** | *May 2024*  
 The University of Texas at Arlington, Texas, USA  

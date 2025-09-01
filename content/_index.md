@@ -1,6 +1,6 @@
 ---
 title: "Eshwara Prasad Sridhar"
-description: "PhD Student in Human Factors and Human-Computer Interaction at Northeastern University"
+description: "PhD Student in Industrial Engineering focusing on Human Factors and Human-Computer Interaction at UT Arlington"
 draft: false
 ---
 
@@ -8,7 +8,7 @@ draft: false
 
 ## About
 
-I am a PhD student in Human Factors and Human-Computer Interaction, where I study human-AI teaming across sociotechnical systems. My research examines how people interact with conversational agents, immersive simulations, and physical AI, with a focus on developing metrics that capture human cognition, trust, and adaptability. By combining human factors principles with computational approaches, I aim to design frameworks that reveal how humans and AI shape each other in dynamic environments. This work seeks to inform the creation of AI systems that are not only technically capable but also ethically grounded and responsive to human needs.
+I am a PhD student in Industrial Engineering focusing on Human Factors and Human-Computer Interaction, where I study human-AI teaming across sociotechnical systems. My research examines how people interact with conversational agents, immersive simulations, and physical AI, with a focus on developing metrics that capture human cognition, trust, and adaptability. By combining human factors principles with computational approaches, I aim to design frameworks that reveal how humans and AI shape each other in dynamic environments. This work seeks to inform the creation of AI systems that are not only technically capable but also ethically grounded and responsive to human needs.
 
 ### Research Interests
 - Human-AI Teaming and Collaboration
@@ -24,8 +24,8 @@ I am a PhD student in Human Factors and Human-Computer Interaction, where I stud
 ## News
 
 <div class="news-item">
-<div class="news-date">January 2025</div>
-Started PhD program in Human Factors and Human-Computer Interaction at Northeastern University.
+<div class="news-date">September 2025</div>
+Continuing PhD program in Industrial Engineering with focus on Human Factors and Human-Computer Interaction at UT Arlington.
 </div>
 
 <div class="news-item">
