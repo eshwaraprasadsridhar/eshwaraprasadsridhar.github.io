@@ -4,705 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary }}{{ end }}">
-    
+    <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <style>
-        /* CSS Variables for theming */
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #333;
-                  <h1>Eshwara Prasad Sridhar</h1>
-                <div class="subtitle">PhD Student</div>
-                <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/imse" class="university" target="_blank">Department of IMSE, UT Arlington</a>
-                
-                <div class="social-links">
-                    <a href="mailto:exs3645@mavs.uta.edu" aria-label="Email" title="Email">✉</a>
-                    <a href="https://scholar.google.com/citations?user=6GXB3qEAAAAJ&hl=en" target="_blank" aria-label="Google Scholar" title="Google Scholar">🎓</a>
-                    <a href="https://github.com/eshwaraprasadsridhar" target="_blank" aria-label="GitHub" title="GitHub">⚡</a>
-                    <a href="https://www.linkedin.com/in/eshwaraprasad/" target="_blank" aria-label="LinkedIn" title="LinkedIn">💼</a>
-                </div>--text-secondary: #666;
-            --bg-color: #ffffff;
-            --sidebar-bg: #f8f9fa;
-            --card-bg: #ffffff;
-            --border-color: #e9ecef;
-            --shadow: 0 2px 10px rgba(0,0,0,0.1);
-            --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
-        }
-
-        [data-theme="dark"] {
-            --primary-color: #ffffff;
-            --accent-color: #cccccc;
-            --text-color: #ffffff;
-            --text-secondary: #cccccc;
-            --bg-color: #000000;
-            --sidebar-bg: #1a1a1a;
-            --card-bg: #2a2a2a;
-            --border-color: #404040;
-            --shadow: 0 2px 10px rgba(0,0,0,0.5);
-            --shadow-hover: 0 4px 20px rgba(0,0,0,0.6);
-        }
-
-        /* Modern reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.65;
-            color: var(--text-color);
-            background: var(--bg-color);
-            font-size: 16px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Layout container */
-        .layout {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Top Header Navigation */
-        .header {
-            background: var(--sidebar-bg);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            transition: all 0.3s ease;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .header-nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .header-nav a:hover {
-            background: var(--accent-color);
-            color: var(--bg-color);
-        }
-
-        /* Main content layout */
-        .content-wrapper {
-            display: flex;
-            flex: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            gap: 3rem;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            width: 300px;
-            background: var(--sidebar-bg);
-            border-right: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
-            height: fit-content;
-            position: sticky;
-            top: 120px;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .profile {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .avatar-container {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-color), #2980b9);
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            font-weight: 700;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .avatar .logo-text {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .avatar::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--accent-color), #2980b9, var(--accent-color));
-            border-radius: 50%;
-            z-index: -1;
-            animation: rotate 3s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .profile h1 {
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-
-        .profile .subtitle {
-            color: var(--accent-color);
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-            font-weight: 500;
-        }
-
-        .profile .university {
-            color: var(--accent-color);
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .profile .university:hover {
-            text-decoration: underline;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin: 1.5rem 0 2rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .social-links a:hover {
-            background: var(--accent-color);
-            border-color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-            color: white;
-        }
-
-        /* Theme toggle */
-        .theme-toggle {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .theme-toggle:hover {
-            background: var(--accent-color);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .nav {
-            list-style: none;
-        }
-
-        .nav li {
-            margin-bottom: 0.5rem;
-        }
-
-        .nav a {
-            display: block;
-            padding: 0.9rem 1.2rem;
-            color: var(--text-color);
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .nav a:hover {
-            background: var(--accent-color);
-            color: white;
-            transform: translateX(6px);
-            box-shadow: var(--shadow);
-        }
-
-        /* Main content */
-        .main-content {
-            flex: 1;
-            max-width: 800px;
-        }
-
-        .content {
-            max-width: 100%;
-        }
-
-        /* Typography */
-        .content h1 {
-            font-size: 2.8rem;
-            font-weight: 300;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .content h2 {
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin: 3rem 0 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--accent-color);
-            position: relative;
-        }
-
-        .content h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: var(--accent-color);
-        }
-
-        .content h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin: 1.5rem 0 0.75rem;
-        }
-
-        .content p {
-            margin-bottom: 1.5rem;
-            text-align: justify;
-            color: var(--text-color);
-            line-height: 1.7;
-        }
-
-        .content ul {
-            margin-bottom: 1.5rem;
-            padding-left: 0;
-        }
-
-        .content li {
-            margin-bottom: 0.75rem;
-            list-style: none;
-            position: relative;
-            padding-left: 1.5rem;
-            color: var(--text-color);
-        }
-
-        .content li::before {
-            content: "▶";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .content a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .content a:hover {
-            text-decoration: underline;
-            color: var(--primary-color);
-        }
-
-        /* Publication styling */
-        .publication {
-            margin-bottom: 2rem;
-            padding: 2rem;
-            background: var(--card-bg);
-            border-radius: 16px;
-            border-left: 4px solid var(--accent-color);
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .publication:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .publication-title {
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: var(--primary-color);
-            line-height: 1.4;
-        }
-
-        .publication-authors {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .publication-venue {
-            color: var(--accent-color);
-            font-style: italic;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .publication-links a {
-            display: inline-block;
-            margin-right: 1rem;
-            padding: 0.5rem 1rem;
-            background: var(--accent-color);
-            color: white;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .publication-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        /* News items */
-        .news-item {
-            margin-bottom: 1.5rem;
-            padding: 1.5rem 2rem;
-            background: var(--card-bg);
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-color);
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .news-item:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .news-date {
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        /* CV last updated */
-        .cv-updated {
-            background: var(--card-bg);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 2rem;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Footer */
-        .footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Quote styling */
-        .quote {
-            margin: 3rem 0;
-            padding: 2rem;
-            font-style: italic;
-            text-align: center;
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            background: var(--card-bg);
-            box-shadow: var(--shadow);
-        }
-
-        /* Responsive design */
-        @media (max-width: 1024px) {
-            .content-wrapper {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            
-            .sidebar {
-                width: 100%;
-                position: relative;
-                top: 0;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .mobile-menu-button {
-                display: none;
-            }
-        }
-
-        .mobile-menu-button {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 1rem;
-            }
-            
-            .header-nav {
-                gap: 1rem;
-            }
-            
-            .content h1 {
-                font-size: 2.2rem;
-            }
-            
-            .content h2 {
-                font-size: 1.5rem;
-            }
-
-            .sidebar {
-                width: 100%;
-            }
-        }
-
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Focus styles for accessibility */
-        .theme-toggle:focus,
-        .nav a:focus,
-        .social-links a:focus {
-            outline: 2px solid var(--accent-color);
-            outline-offset: 2px;
-        }
+        :root{
+            --text-color:#222;
+            --text-secondary:#666;
+            --bg-color:#fff;
+            --card-bg:#fff;
+            --border-color:#e5e7eb;
+            --accent-color:#111;
+        }
+        [data-theme="dark"]{
+            --text-color:#e5e7eb;
+            --text-secondary:#9ca3af;
+            --bg-color:#000;
+            --card-bg:#111;
+            --border-color:#27272a;
+            --accent-color:#e5e7eb;
+        }
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;color:var(--text-color);background:var(--bg-color);line-height:1.7}
+        a{color:var(--accent-color);text-decoration:none}
+        a:hover{text-decoration:underline}
+        .container{max-width:920px;margin:0 auto;padding:2rem 1rem}
+        header.site-header{border-bottom:1px solid var(--border-color);background:var(--bg-color);position:sticky;top:0;z-index:20}
+        .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+        .identity{display:flex;align-items:center;gap:1rem}
+        .avatar{width:64px;height:64px;border-radius:50%;overflow:hidden;background:#222;display:flex;align-items:center;justify-content:center}
+        .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+        .title h1{font-weight:600;font-size:1.5rem}
+        .title .subtitle{font-size:.95rem;color:var(--text-secondary)}
+        nav.top-nav ul{display:flex;gap:1rem;list-style:none}
+        nav.top-nav a{display:block;padding:.5rem .75rem;border-radius:.5rem}
+        main.main{padding-top:1rem}
+        .theme-toggle{border:1px solid var(--border-color);background:var(--card-bg);border-radius:.5rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+        footer.site-footer{border-top:1px solid var(--border-color);color:var(--text-secondary);padding-top:1.5rem;margin-top:3rem;text-align:center}
+        /* Content headings similar to reference */
+        .content h2{font-size:1.5rem;font-weight:600;margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-color)}
+        .content h3{font-size:1.1rem;font-weight:600;margin:1rem 0 .5rem}
+        .content p{margin:.75rem 0;text-align:justify}
+        .news-item{padding:1rem;border:1px solid var(--border-color);border-radius:.5rem;background:var(--card-bg);margin:.75rem 0}
+        .news-date{font-weight:600;color:var(--text-secondary);margin-bottom:.25rem}
     </style>
 </head>
 <body>
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark/light mode">
-        <span class="theme-icon">🌙</span>
-    </button>
-
-    <!-- Mobile Menu Button -->
-    <button class="mobile-menu-button" onclick="toggleSidebar()">☰</button>
-    
-    <div class="layout">
-        <aside class="sidebar" id="sidebar">
-            <div class="profile">
-                <div class="avatar-container">
-                    <div class="avatar">
-                        <img src="/images/eps-logo.svg" alt="EPS Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <span class="logo-text" style="display: none;">EPS</span>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="identity">
+                <div class="avatar">
+                    <img src="/images/eps-logo.svg" alt="EPS">
+                </div>
+                <div class="title">
+                    <h1>Eshwara Prasad Sridhar</h1>
+                    <div class="subtitle">
+                        PhD Student · <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/imse" target="_blank" rel="noopener">UTA IMSE</a>
+                        · <a href="mailto:exs3645@mavs.uta.edu">exs3645@mavs.uta.edu</a>
+                        · <a href="https://scholar.google.com/citations?user=6GXB3qEAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+                        · <a href="https://github.com/eshwaraprasadsridhar" target="_blank" rel="noopener">GitHub</a>
+                        · <a href="https://www.linkedin.com/in/eshwaraprasad/" target="_blank" rel="noopener">LinkedIn</a>
                     </div>
                 </div>
-                <h1>Eshwara Prasad Sridhar</h1>
-                <div class="subtitle">PhD Student</div>
-                <a href="https://coe.northeastern.edu/" class="university" target="_blank">Northeastern University</a>
-                
-                <div class="social-links">
-                    <a href="mailto:sridhar.e@northeastern.edu" aria-label="Email" title="Email">✉</a>
-                    <a href="https://scholar.google.com" target="_blank" aria-label="Google Scholar" title="Google Scholar">🎓</a>
-                    <a href="https://github.com/eshwaraprasadsridhar" target="_blank" aria-label="GitHub" title="GitHub">⚡</a>
-                    <a href="https://linkedin.com/in/eshwaraprasadsridhar" target="_blank" aria-label="LinkedIn" title="LinkedIn">�</a>
-                </div>
             </div>
-            
-            <nav>
-                <ul class="nav">
-                    <li><a href="/#about">About</a></li>
-                    <li><a href="/#news">News</a></li>
-                    <li><a href="/#publications">Publications</a></li>
-                    <li><a href="/cv/">CV</a></li>
-                </ul>
-            </nav>
-        </aside>
-        
-        <main class="main-content">
-            <div class="content">
-                {{ block "main" . }}{{ end }}
+            <div style="display:flex;align-items:center;gap:.5rem">
+                <nav class="top-nav" aria-label="Primary">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/cv/">CV</a></li>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#news">News</a></li>
+                        <li><a href="/#publications">Publications</a></li>
+                    </ul>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><span class="theme-icon">🌙</span></button>
             </div>
-            
-            <footer class="footer">
-                <p>&copy; {{ now.Year }} Eshwara Prasad Sridhar. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-            </footer>
-        </main>
-    </div>
-
+        </div>
+    </header>
+    <main class="main">
+        <div class="container content">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            &copy; {{ now.Year }} Eshwara Prasad Sridhar · Built with Hugo
+        </div>
+    </footer>
     <script>
-        // Theme management
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            // Update theme icon
-            const themeIcon = document.querySelector('.theme-icon');
-            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        function toggleTheme(){
+            const html=document.documentElement;
+            const cur=html.getAttribute('data-theme');
+            const next=cur==='dark'?'light':'dark';
+            html.setAttribute('data-theme',next);
+            localStorage.setItem('theme',next);
+            const icon=document.querySelector('.theme-icon');
+            if(icon) icon.textContent= next==='dark'?'☀️':'🌙';
         }
-
-        // Initialize theme on page load
-        function initializeTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-            
+        (function init(){
+            const saved=localStorage.getItem('theme');
+            const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme=saved || (prefersDark? 'dark':'light');
             document.documentElement.setAttribute('data-theme', theme);
-            
-            // Update theme icon
-            const themeIcon = document.querySelector('.theme-icon');
-            if (themeIcon) {
-                themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-            }
-        }
-
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
-
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(event) {
-            const sidebar = document.getElementById('sidebar');
-            const menuButton = document.querySelector('.mobile-menu-button');
-            
-            if (window.innerWidth <= 1024 && 
-                !sidebar.contains(event.target) && 
-                !menuButton.contains(event.target)) {
-                sidebar.classList.remove('open');
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Initialize theme when page loads
-        document.addEventListener('DOMContentLoaded', initializeTheme);
-
-        // Listen for system theme changes
-        if (window.matchMedia) {
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-                if (!localStorage.getItem('theme')) {
-                    const theme = e.matches ? 'dark' : 'light';
-                    document.documentElement.setAttribute('data-theme', theme);
-                    const themeIcon = document.querySelector('.theme-icon');
-                    if (themeIcon) {
-                        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-                    }
-                }
-            });
-        }
-    </script>
-</body>
+            const icon=document.querySelector('.theme-icon');
+            if(icon) icon.textContent= theme==='dark'?'☀️':'🌙';
+        })();
     </script>
 </body>
 </html>
