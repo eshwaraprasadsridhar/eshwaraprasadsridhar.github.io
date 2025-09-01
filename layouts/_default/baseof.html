@@ -7,6 +7,33 @@
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary }}{{ end }}">
     
     <style>
+        /* CSS Variables for theming */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #ffffff;
+            --sidebar-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-color: #e9ecef;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #ecf0f1;
+            --accent-color: #5dade2;
+            --text-color: #ecf0f1;
+            --text-secondary: #bdc3c7;
+            --bg-color: #1a1a1a;
+            --sidebar-bg: #2c2c2c;
+            --card-bg: #2c2c2c;
+            --border-color: #404040;
+            --shadow: 0 2px 10px rgba(0,0,0,0.3);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
         /* Modern reset and base styles */
         * {
             margin: 0;
@@ -21,9 +48,10 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.65;
-            color: #333;
-            background: #fff;
+            color: var(--text-color);
+            background: var(--bg-color);
             font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* Layout container */
@@ -34,14 +62,15 @@
 
         /* Sidebar */
         .sidebar {
-            width: 280px;
-            background: #f8f9fa;
-            border-right: 1px solid #e9ecef;
+            width: 320px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
             position: fixed;
             height: 100vh;
             overflow-y: auto;
             padding: 2rem 1.5rem;
             z-index: 100;
+            transition: all 0.3s ease;
         }
 
         .profile {
@@ -51,41 +80,78 @@
 
         .avatar-container {
             margin-bottom: 1.5rem;
+            position: relative;
         }
 
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, var(--accent-color), #2980b9);
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: white;
-            font-weight: 600;
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .avatar .logo-text {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .avatar::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--accent-color), #2980b9, var(--accent-color));
+            border-radius: 50%;
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .profile h1 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #2c3e50;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
             line-height: 1.3;
         }
 
         .profile .subtitle {
-            color: #3498db;
+            color: var(--accent-color);
             font-size: 1rem;
             margin-bottom: 0.25rem;
+            font-weight: 500;
         }
 
         .profile .university {
-            color: #3498db;
+            color: var(--accent-color);
             font-size: 0.95rem;
             text-decoration: none;
+            transition: all 0.2s ease;
         }
 
         .profile .university:hover {
@@ -103,21 +169,49 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #fff;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.2s ease;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
         }
 
         .social-links a:hover {
-            background: #3498db;
-            border-color: #3498db;
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            color: white;
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-color);
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            box-shadow: var(--shadow-hover);
         }
 
         .nav {
@@ -130,26 +224,28 @@
 
         .nav a {
             display: block;
-            padding: 0.75rem 1rem;
-            color: #555;
+            padding: 0.9rem 1.2rem;
+            color: var(--text-color);
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 500;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
         }
 
         .nav a:hover {
-            background: #3498db;
+            background: var(--accent-color);
             color: white;
-            transform: translateX(4px);
+            transform: translateX(6px);
+            box-shadow: var(--shadow);
         }
 
         /* Main content */
         .main-content {
             flex: 1;
-            margin-left: 280px;
+            margin-left: 320px;
             padding: 2rem 3rem;
-            max-width: 900px;
+            max-width: 1000px;
         }
 
         .content {
@@ -158,37 +254,49 @@
 
         /* Typography */
         .content h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 300;
-            color: #2c3e50;
+            color: var(--primary-color);
             margin-bottom: 1rem;
             line-height: 1.2;
         }
 
         .content h2 {
-            font-size: 1.75rem;
-            font-weight: 400;
-            color: #2c3e50;
-            margin: 2.5rem 0 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #3498db;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin: 3rem 0 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent-color);
+            position: relative;
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--accent-color);
         }
 
         .content h3 {
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
             margin: 1.5rem 0 0.75rem;
         }
 
         .content p {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
             text-align: justify;
-            color: #444;
+            color: var(--text-color);
+            line-height: 1.7;
         }
 
         .content ul {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
             padding-left: 0;
         }
 
@@ -197,95 +305,129 @@
             list-style: none;
             position: relative;
             padding-left: 1.5rem;
+            color: var(--text-color);
         }
 
         .content li::before {
-            content: "•";
-            color: #3498db;
+            content: "▶";
+            color: var(--accent-color);
             position: absolute;
             left: 0;
             font-weight: bold;
         }
 
         .content a {
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
+            transition: all 0.2s ease;
         }
 
         .content a:hover {
             text-decoration: underline;
+            color: var(--primary-color);
         }
 
         /* Publication styling */
         .publication {
             margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .publication:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
         }
 
         .publication-title {
             font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
             line-height: 1.4;
         }
 
         .publication-authors {
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
 
         .publication-venue {
-            color: #3498db;
+            color: var(--accent-color);
             font-style: italic;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
 
         .publication-links a {
             display: inline-block;
             margin-right: 1rem;
-            padding: 0.25rem 0.75rem;
-            background: #3498db;
+            padding: 0.5rem 1rem;
+            background: var(--accent-color);
             color: white;
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 0.9rem;
             text-decoration: none;
+            transition: all 0.2s ease;
         }
 
         .publication-links a:hover {
-            background: #2980b9;
+            background: var(--primary-color);
+            transform: translateY(-2px);
         }
 
         /* News items */
         .news-item {
             margin-bottom: 1.5rem;
-            padding: 1rem 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 3px solid #3498db;
+            padding: 1.5rem 2rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
         .news-date {
             font-weight: 600;
-            color: #3498db;
+            color: var(--accent-color);
             margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* CV last updated */
+        .cv-updated {
+            background: var(--card-bg);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         /* Footer */
         .footer {
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid #e9ecef;
+            border-top: 1px solid var(--border-color);
             text-align: center;
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
         .footer a {
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
         }
 
@@ -295,13 +437,15 @@
 
         /* Quote styling */
         .quote {
-            margin: 2rem 0;
-            padding: 1rem;
+            margin: 3rem 0;
+            padding: 2rem;
             font-style: italic;
             text-align: center;
-            color: #666;
-            border-top: 1px solid #e9ecef;
-            border-bottom: 1px solid #e9ecef;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
         }
 
         /* Responsive design */
@@ -326,12 +470,14 @@
                 top: 1rem;
                 left: 1rem;
                 z-index: 101;
-                background: #3498db;
+                background: var(--accent-color);
                 color: white;
                 border: none;
-                padding: 0.5rem;
-                border-radius: 4px;
+                padding: 0.75rem;
+                border-radius: 12px;
                 cursor: pointer;
+                box-shadow: var(--shadow);
+                font-size: 1.2rem;
             }
         }
 
@@ -345,40 +491,71 @@
             }
             
             .content h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .content h2 {
                 font-size: 1.5rem;
             }
+
+            .sidebar {
+                width: 280px;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        .theme-toggle:focus,
+        .nav a:focus,
+        .social-links a:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <!-- Mobile Menu Button -->
     <button class="mobile-menu-button" onclick="toggleSidebar()">☰</button>
     
     <div class="layout">
         <aside class="sidebar" id="sidebar">
             <div class="profile">
                 <div class="avatar-container">
-                    <div class="avatar">EPS</div>
+                    <div class="avatar">
+                        <img src="/images/eps-logo.svg" alt="EPS Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="logo-text" style="display: none;">EPS</span>
+                    </div>
                 </div>
-                <h1>{{ .Site.Title }}</h1>
-                <div class="subtitle">Ph.D Student</div>
-                <a href="https://www.uta.edu/" class="university">UT Arlington</a>
+                <h1>Eshwara Prasad Sridhar</h1>
+                <div class="subtitle">PhD Student</div>
+                <a href="https://coe.northeastern.edu/" class="university" target="_blank">Northeastern University</a>
                 
                 <div class="social-links">
-                    <a href="mailto:exs3645@mavs.uta.edu" title="Email">📧</a>
-                    <a href="https://linkedin.com/in/eshwaraprasadsridhar" title="LinkedIn">🔗</a>
-                    <a href="https://github.com/eshwaraprasadsridhar" title="GitHub">💻</a>
+                    <a href="mailto:sridhar.e@northeastern.edu" aria-label="Email" title="Email">✉</a>
+                    <a href="https://scholar.google.com" target="_blank" aria-label="Google Scholar" title="Google Scholar">🎓</a>
+                    <a href="https://github.com/eshwaraprasadsridhar" target="_blank" aria-label="GitHub" title="GitHub">⚡</a>
+                    <a href="https://linkedin.com/in/eshwaraprasadsridhar" target="_blank" aria-label="LinkedIn" title="LinkedIn">�</a>
                 </div>
             </div>
             
             <nav>
                 <ul class="nav">
-                    <li><a href="/#about">About Me</a></li>
-                    <li><a href="/#news">NEWS</a></li>
-                    <li><a href="/#publications">Publication List</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#news">News</a></li>
+                    <li><a href="/#publications">Publications</a></li>
                     <li><a href="/cv/">CV</a></li>
                 </ul>
             </nav>
@@ -390,12 +567,41 @@
             </div>
             
             <footer class="footer">
-                <p>© 2025 {{ .Site.Title }} · Powered by <a href="https://gohugo.io/">Hugo</a></p>
+                <p>&copy; {{ now.Year }} Eshwara Prasad Sridhar. Built with <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
             </footer>
         </main>
     </div>
 
     <script>
+        // Theme management
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update theme icon
+            const themeIcon = document.querySelector('.theme-icon');
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Initialize theme on page load
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            
+            document.documentElement.setAttribute('data-theme', theme);
+            
+            // Update theme icon
+            const themeIcon = document.querySelector('.theme-icon');
+            if (themeIcon) {
+                themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('open');
@@ -426,6 +632,25 @@
                 }
             });
         });
+
+        // Initialize theme when page loads
+        document.addEventListener('DOMContentLoaded', initializeTheme);
+
+        // Listen for system theme changes
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (!localStorage.getItem('theme')) {
+                    const theme = e.matches ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', theme);
+                    const themeIcon = document.querySelector('.theme-icon');
+                    if (themeIcon) {
+                        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
     </script>
 </body>
 </html>

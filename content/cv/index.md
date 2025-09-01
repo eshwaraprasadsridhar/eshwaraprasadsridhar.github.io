@@ -3,34 +3,53 @@ title: "Curriculum Vitae"
 draft: false
 ---
 
-# Eshwara Prasad Sridhar
-**Ph.D. Student in Industrial Engineering**  
-Department of Industrial, Manufacturing, and Systems Engineering  
-The University of Texas at Arlington
+---
+title: "Curriculum Vitae"
+draft: false
+---
 
-📧 exs3645@mavs.uta.edu | 📞 +1 (682) 433-9624 | 📍 Arlington, TX  
-🔗 [LinkedIn](https://linkedin.com/in/eshwaraprasadsridhar) | 🆔 [ORCID](https://orcid.org/eshwaraprasadsridhar)
+<div class="cv-updated">
+Last updated: January 31, 2025
+</div>
+
+# Eshwara Prasad Sridhar
+**PhD Student in Human Factors and Human-Computer Interaction**  
+College of Engineering  
+Northeastern University
+
+📧 sridhar.e@northeastern.edu | 📞 +1 (682) 433-9624 | 📍 Boston, MA  
+🔗 [LinkedIn](https://linkedin.com/in/eshwaraprasadsridhar) | 🆔 [ORCID](https://orcid.org/eshwaraprasadsridhar) | ⚡ [GitHub](https://github.com/eshwaraprasadsridhar)
 
 ---
 
 ## Education
 
-**Ph.D. in Industrial Engineering** | *May 2027 (Expected)*  
-The University of Texas at Arlington, Texas, USA  
-GPA: 3.9/4.0
+**Ph.D. in Human Factors and Human-Computer Interaction** | *In Progress (2025-)*  
+Northeastern University, Boston, MA, USA  
+*Research Focus: Human-AI Teaming, Conversational Agents, Trust in AI Systems*
 
 **Master of Science in Industrial Engineering** | *May 2024*  
 The University of Texas at Arlington, Texas, USA  
-GPA: 3.9/4.0
+GPA: 3.9/4.0  
+*Thesis: Design and Evaluation of Soft Wearable Robotic Systems for Human Augmentation*
 
 **Bachelor of Technology in Mechatronics Engineering** | *May 2020*  
-SRM Institute of Science and Technology, Chennai, India
+SRM Institute of Science and Technology, Chennai, India  
+*Concentration: Robotics and Automation Systems*
 
 ---
 
-## Experience
+## Research Experience
 
-### Graduate Research Assistant | *Sept 2023 - Present*
+### Graduate Research Assistant | *Jan 2025 - Present*
+**Human Factors and HCI Lab**, Northeastern University
+
+• Investigating human-AI teaming dynamics in sociotechnical systems with focus on trust, transparency, and adaptability  
+• Developing metrics for evaluating human cognition and performance in AI-assisted decision making  
+• Designing and conducting user studies with conversational agents and immersive simulation environments  
+• Applying computational approaches to analyze human behavior patterns in human-AI collaboration
+
+### Graduate Research Assistant | *Sept 2023 - Dec 2024*
 **UTA Research Institute & Department of IMSE**, Texas, USA
 
 • Prototyped and tested a Soft Wearable Robotic Elbow Exoskeleton, prioritizing user comfort and functionality to reduce musculoskeletal disorder risk  
@@ -47,6 +66,10 @@ SRM Institute of Science and Technology, Chennai, India
 • Developed an imaging system for the WAAM process, reducing rework by 30% and increasing manufacturing precision and efficiency  
 • Implemented RFID and RTLS systems in a manufacturing research environment, improving real-time tracking, operational efficiency, and resource allocation
 
+---
+
+## Professional Experience
+
 ### Assistant Systems Engineer | *Aug 2020 – Dec 2021*
 **Tata Consultancy Services** (Client: GE Renewable Energy), Chennai, India
 
@@ -55,7 +78,7 @@ SRM Institute of Science and Technology, Chennai, India
 • Validated over 1500 control parameters, enhancing system stability and overall performance in wind turbine operations  
 • Championed continuous improvement initiatives by gathering team input and executing field changes, resulting in a 25% reduction in operational costs
 
-### Intern, Engine Assembly Department | *Nov 2018 – Dec 2018*
+### Engineering Intern | *Nov 2018 – Dec 2018*
 **Royal Enfield – Eicher Motors**, Chennai, India
 
 • Performed time study analysis of assembly processes, identifying opportunities to improve speed by 7% without compromising quality  
