@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eshwara Prasad Sridhar - Academic Portfolio</title>
+    <meta name="description" content="PhD Student in Industrial Engineering at UT Arlington specializing in Human-Robot Interaction and Wearable Robotics">
+    <meta name="keywords" content="Industrial Engineering, Human-Robot Interaction, Wearable Robotics, PhD, Research, UT Arlington">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #ffffff;
+            --section-bg: #f8f9fa;
+            --border-color: #e9ecef;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #34495e;
+            --accent-color: #5dade2;
+            --text-color: #ecf0f1;
+            --bg-color: #1a1a1a;
+            --section-bg: #2c2c2c;
+            --border-color: #404040;
+            --shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .header-info h2 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            color: var(--accent-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--section-bg);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: var(--section-bg);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+        }
+
+        .research-areas {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .research-areas h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .research-list {
+            list-style: none;
+        }
+
+        .research-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .research-list li:before {
+            content: "▶";
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .degree {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .university {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .gpa {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .company {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .job-date {
+            background: var(--section-bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .job-responsibilities {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .job-responsibilities li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .job-responsibilities li:before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Publications Section */
+        .publication-item {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .publication-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-venue {
+            color: var(--accent-color);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .publication-description {
+            margin-top: 1rem;
+        }
+
+        .publication-description ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .publication-description li {
+            padding: 0.25rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .publication-description li:before {
+            content: "→";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .award-item {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .award-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-description {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .job-header, .education-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        EPS
+                    </div>
+                </div>
+                <div class="header-info">
+                    <h1>Eshwara Prasad Sridhar</h1>
+                    <h2>PhD Student in Industrial Engineering</h2>
+                    <p>Department of Industrial, Manufacturing, and Systems Engineering<br>
+                    The University of Texas at Arlington</p>
+                    <div class="contact-info">
+                        <a href="mailto:exs3645@mavs.uta.edu" class="contact-item">
+                            📧 exs3645@mavs.uta.edu
+                        </a>
+                        <a href="tel:+16824339624" class="contact-item">
+                            📞 +1 (682) 433-9624
+                        </a>
+                        <span class="contact-item">
+                            📍 Arlington, TX
+                        </span>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    🌓 Toggle Theme
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="cv.html">Full CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a PhD student in Industrial Engineering at The University of Texas at Arlington, conducting cutting-edge research in Human-Robot Interaction and Wearable Robotics. My work focuses on developing innovative solutions that enhance human capabilities while prioritizing user comfort and safety.</p>
+                    
+                    <p>With a strong background in mechatronics engineering and industrial experience at Tata Consultancy Services, I bring a unique perspective that bridges theoretical research with practical applications. My research has led to significant achievements, including a 22% reduction in muscle activity through soft wearable robotic exoskeletons.</p>
+                    
+                    <p>I am passionate about advancing the field of human-robot interaction through interdisciplinary research that combines engineering principles with human factors considerations.</p>
+                </div>
+                <div class="research-areas">
+                    <h3>Research Areas</h3>
+                    <ul class="research-list">
+                        <li>Human-Robot Interaction</li>
+                        <li>Wearable Robotics & Exoskeletons</li>
+                        <li>Manufacturing Systems</li>
+                        <li>Biomechanical Analysis</li>
+                        <li>Teleoperation Systems</li>
+                        <li>Virtual Reality Applications</li>
+                        <li>Ergonomics & Safety</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="degree">PhD in Industrial Engineering</div>
+                        <div class="university">The University of Texas at Arlington</div>
+                    </div>
+                    <div>
+                        <div class="gpa">GPA: 3.9/4.0</div>
+                        <div style="text-align: right; margin-top: 0.5rem;">May 2027 (Expected)</div>
+                    </div>
+                </div>
+                <p>Conducting research in Human-Robot Interaction and Wearable Robotics with focus on reducing work-related musculoskeletal disorders.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="degree">Master of Science in Industrial Engineering</div>
+                        <div class="university">The University of Texas at Arlington</div>
+                    </div>
+                    <div>
+                        <div class="gpa">GPA: 3.9/4.0</div>
+                        <div style="text-align: right; margin-top: 0.5rem;">May 2024</div>
+                    </div>
+                </div>
+                <p>Specialized in advanced manufacturing systems, quality engineering, and human factors.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="degree">Bachelor of Technology in Mechatronics Engineering</div>
+                        <div class="university">SRM Institute of Science and Technology, Chennai, India</div>
+                    </div>
+                    <div style="text-align: right;">May 2020</div>
+                </div>
+                <p>Foundation in mechanical engineering, electronics, and automation systems.</p>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Graduate Research Assistant</div>
+                        <div class="company">UTA Research Institute & Department of IMSE</div>
+                    </div>
+                    <div class="job-date">Sept 2023 - Present</div>
+                </div>
+                <ul class="job-responsibilities">
+                    <li>Prototyped and tested a Soft Wearable Robotic Elbow Exoskeleton, prioritizing user comfort and functionality to reduce musculoskeletal disorder risk</li>
+                    <li>Designed and executed human studies to collect user experience data and evaluate subjective feedback on exoskeleton performance</li>
+                    <li>Conducted biomechanical testing using EMG, IMU, loadcells, and pressure mats alongside user experience assessments</li>
+                    <li>Developed a 3D visual feedback system utilizing VR and 360° video for robotic teleoperation, enhancing depth perception</li>
+                    <li>Led experiments comparing monocular and binocular feedback systems, resulting in reduced task completion time and errors</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Research Assistant</div>
+                        <div class="company">Department of IMSE, UT Arlington</div>
+                    </div>
+                    <div class="job-date">Jan 2023 – Aug 2023</div>
+                </div>
+                <ul class="job-responsibilities">
+                    <li>Led the design and production of the Fire Watch Cart for Nuclear Power Plant using SolidWorks</li>
+                    <li>Managed procurement process via RFQ, reducing production costs by 20% while maintaining quality</li>
+                    <li>Developed an imaging system for the WAAM process, reducing rework by 30%</li>
+                    <li>Implemented RFID and RTLS systems in manufacturing research environment</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Assistant Systems Engineer</div>
+                        <div class="company">Tata Consultancy Services (Client: GE Renewable Energy)</div>
+                    </div>
+                    <div class="job-date">Aug 2020 – Dec 2021</div>
+                </div>
+                <ul class="job-responsibilities">
+                    <li>Conducted root cause analysis using 8D methodology for 50+ turbine control issues across 1500+ wind turbines</li>
+                    <li>Resolved control system anomalies, reducing operational downtime by 15%</li>
+                    <li>Validated over 1500 control parameters, enhancing system stability and performance</li>
+                    <li>Championed continuous improvement initiatives, resulting in 25% reduction in operational costs</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Intern, Engine Assembly Department</div>
+                        <div class="company">Royal Enfield – Eicher Motors</div>
+                    </div>
+                    <div class="job-date">Nov 2018 – Dec 2018</div>
+                </div>
+                <ul class="job-responsibilities">
+                    <li>Performed time study analysis, identifying opportunities to improve assembly speed by 7%</li>
+                    <li>Developed assembly process documentation, reducing training time by 30%</li>
+                    <li>Assisted in assembling 200+ Royal Enfield engines</li>
+                    <li>Collaborated with senior engineers to resolve 10+ assembly line issues through RCA</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <h2>Publications & Projects</h2>
+            
+            <div class="publication-item">
+                <div class="publication-title">Design, Development, and Evaluation of a Soft Wearable Robotic Elbow Exoskeleton for Reducing Muscle Activity and Perceived Workload</div>
+                <div class="publication-venue">Journal of Rehabilitation and Assistive Technologies Engineering (Under Review)</div>
+                <div class="publication-description">
+                    <ul>
+                        <li>Achieved a 22.36% reduction in biceps and 18.19% in triceps muscle activity</li>
+                        <li>Utilized Surface Electromyography (EMG) and biomechanical analysis for evaluation</li>
+                        <li>Confirmed precise control and optimal actuation speed through mechanical testing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">Evaluating an Elbow Exoskeleton for Reducing Work-related Musculoskeletal Disorders Risk: An Interdisciplinary Study</div>
+                <div class="publication-venue">Proceedings of the IISE Annual Conference & Expo 2024</div>
+                <div class="publication-description">
+                    <ul>
+                        <li>Conducted comprehensive EMG analysis using MATLAB for signal processing</li>
+                        <li>Evaluated cognitive workload and user perception metrics</li>
+                        <li>Demonstrated effectiveness in reducing muscle strain and improving usability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">Depth Perception and Task Performance in Robotic Teleoperation</div>
+                <div class="publication-venue">Proceedings of the IISE Annual Conference & Expo 2024</div>
+                <div class="publication-description">
+                    <ul>
+                        <li>Investigated impact of VR and 360° video on teleoperation performance</li>
+                        <li>Significantly reduced task completion time and errors compared to 2D feedback</li>
+                        <li>Evaluated operator comfort using NASA-TLX methodology</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">Improving Task Performance in Robotic Teleoperation Using 3D (Binocular) Visual Cues</div>
+                <div class="publication-venue">Proceedings of the 68th HFES International Annual Meeting</div>
+                <div class="publication-description">
+                    <ul>
+                        <li>Leveraged ANOVA and multiple linear regression for comprehensive analysis</li>
+                        <li>Demonstrated notable reductions in task time and error rates with 3D visual cues</li>
+                        <li>Analyzed interdependencies between object type, experience, and visual feedback</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills & Knowledge Base</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Engineering Software</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SolidWorks</span>
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">ANSYS</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Siemens NX</span>
+                        <span class="skill-tag">CATIA</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Research & Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">EMG Analysis</span>
+                        <span class="skill-tag">Statistical Modeling</span>
+                        <span class="skill-tag">DOE</span>
+                        <span class="skill-tag">Biomechanical Testing</span>
+                        <span class="skill-tag">Human Studies</span>
+                        <span class="skill-tag">Usability Testing</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Manufacturing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">5-axis CNC</span>
+                        <span class="skill-tag">3D Printing</span>
+                        <span class="skill-tag">WAAM Process</span>
+                        <span class="skill-tag">Quality Control</span>
+                        <span class="skill-tag">Six Sigma</span>
+                        <span class="skill-tag">Lean Manufacturing</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Data & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Minitab</span>
+                        <span class="skill-tag">SAS</span>
+                        <span class="skill-tag">NI LabVIEW</span>
+                        <span class="skill-tag">Statistical Process Control</span>
+                        <span class="skill-tag">Root Cause Analysis</span>
+                        <span class="skill-tag">FMEA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards" class="section">
+            <h2>Awards & Certifications</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-title">Elinor Paper Endowed Scholar</div>
+                    <div class="award-description">Outstanding Industrial Engineering Student</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">Alpha Pi Mu Honor Society</div>
+                    <div class="award-description">Academic Excellence Recognition</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">Best Graduate Student Researcher</div>
+                    <div class="award-description">UTA Research Institute (Fall 2023, Spring 2024)</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">Certified SolidWorks Associate</div>
+                    <div class="award-description">CSWA Certification</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">Six Sigma Green Belt</div>
+                    <div class="award-description">CSSGB Certification</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">IICDC '19 Finalist</div>
+                    <div class="award-description">Texas Instruments Design Contest</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2025 Eshwara Prasad Sridhar. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:exs3645@mavs.uta.edu">Email</a>
+                    <a href="#" onclick="window.print()">Print</a>
+                    <a href="cv.html">Full CV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Load saved theme or default to light
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

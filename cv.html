@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Eshwara Prasad Sridhar</title>
+    <meta name="description" content="Comprehensive CV of Eshwara Prasad Sridhar - PhD Student in Industrial Engineering">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #ffffff;
+            --section-bg: #f8f9fa;
+            --border-color: #e9ecef;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #34495e;
+            --accent-color: #5dade2;
+            --text-color: #ecf0f1;
+            --bg-color: #1a1a1a;
+            --section-bg: #2c2c2c;
+            --border-color: #404040;
+            --shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .header-content h2 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #ecf0f1;
+        }
+
+        .contact-item a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .cv-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--section-bg);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .cv-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Education */
+        .education-entry {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-color);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .degree {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .institution {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .education-details {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .gpa-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* Experience */
+        .experience-entry {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-color);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .company {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .job-duration {
+            background: var(--section-bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .responsibilities li {
+            padding: 0.4rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .responsibilities li:before {
+            content: "▸";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Publications */
+        .publication-entry {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-color);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .publication-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-venue {
+            color: var(--accent-color);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .publication-highlights {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .publication-highlights li {
+            padding: 0.3rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .publication-highlights li:before {
+            content: "→";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-group {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .skill-group h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-item {
+            background: var(--bg-color);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            text-align: center;
+        }
+
+        .cert-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .award-card {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            text-align: center;
+        }
+
+        .award-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .award-description {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            .controls, .btn {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            
+            .cv-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .experience-entry, .publication-entry {
+                break-inside: avoid;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .job-header, .education-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .controls {
+                position: relative;
+                top: auto;
+                right: auto;
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="btn" onclick="toggleTheme()">🌓 Theme</button>
+        <button class="btn" onclick="window.print()">🖨️ Print</button>
+        <a href="index.html" class="btn">🏠 Home</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Eshwara Prasad Sridhar</h1>
+                <h2>Curriculum Vitae</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        📧 <a href="mailto:exs3645@mavs.uta.edu">exs3645@mavs.uta.edu</a>
+                    </div>
+                    <div class="contact-item">
+                        📞 +1 (682) 433-9624
+                    </div>
+                    <div class="contact-item">
+                        📍 Arlington, TX
+                    </div>
+                    <div class="contact-item">
+                        🔗 <a href="#">LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        🆔 <a href="#">ORCID Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="cv-section">
+            <h2>Education</h2>
+            
+            <div class="education-entry">
+                <div class="education-header">
+                    <div>
+                        <div class="degree">Ph.D. in Industrial Engineering</div>
+                        <div class="institution">The University of Texas at Arlington, Texas, USA</div>
+                    </div>
+                    <div class="education-details">
+                        <div class="gpa-badge">GPA: 3.9/4.0</div>
+                        <div>May 2027 (Expected)</div>
+                    </div>
+                </div>
+                <p><strong>Research Focus:</strong> Human-Robot Interaction, Wearable Robotics, Biomechanical Analysis</p>
+            </div>
+
+            <div class="education-entry">
+                <div class="education-header">
+                    <div>
+                        <div class="degree">Master of Science in Industrial Engineering</div>
+                        <div class="institution">The University of Texas at Arlington, Texas, USA</div>
+                    </div>
+                    <div class="education-details">
+                        <div class="gpa-badge">GPA: 3.9/4.0</div>
+                        <div>May 2024</div>
+                    </div>
+                </div>
+                <p><strong>Specialization:</strong> Manufacturing Systems, Quality Engineering, Human Factors</p>
+            </div>
+
+            <div class="education-entry">
+                <div class="education-header">
+                    <div>
+                        <div class="degree">Bachelor of Technology in Mechatronics Engineering</div>
+                        <div class="institution">SRM Institute of Science and Technology, Chennai, India</div>
+                    </div>
+                    <div>May 2020</div>
+                </div>
+                <p><strong>Foundation:</strong> Mechanical Engineering, Electronics, Control Systems, Automation</p>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-entry">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Graduate Research Assistant</div>
+                        <div class="company">UTA Research Institute & Department of IMSE, Texas, USA</div>
+                    </div>
+                    <div class="job-duration">Sept 2023 - Present</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Prototyped and tested a Soft Wearable Robotic Elbow Exoskeleton, prioritizing user comfort and functionality to reduce musculoskeletal disorder risk</li>
+                    <li>Designed and executed human studies to collect user experience data and evaluate subjective feedback on exoskeleton performance</li>
+                    <li>Conducted biomechanical testing using EMG, IMU, loadcells, and pressure mats alongside user experience assessments (NASA-TLX, User Perception Surveys)</li>
+                    <li>Developed a 3D visual feedback system utilizing VR and 360° video for robotic teleoperation, enhancing depth perception and improving task efficiency</li>
+                    <li>Led experiments comparing monocular and binocular (AR/VR) feedback systems in robotic teleoperation, resulting in reduced task completion time and errors</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Research Assistant</div>
+                        <div class="company">Department of IMSE, The University of Texas at Arlington</div>
+                    </div>
+                    <div class="job-duration">Jan 2023 – Aug 2023</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Led the design and production of the Fire Watch Cart for Nuclear Power Plant, ensuring adherence to safety and functionality standards using SolidWorks</li>
+                    <li>Managed the procurement process for the Fire Watch Cart via the RFQ process, securing high-quality materials and reducing production costs by 20%</li>
+                    <li>Developed an imaging system for the WAAM process, reducing rework by 30% and increasing manufacturing precision and efficiency</li>
+                    <li>Implemented RFID and RTLS systems in a manufacturing research environment, improving real-time tracking and operational efficiency</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Assistant Systems Engineer</div>
+                        <div class="company">Tata Consultancy Services (Client: GE Renewable Energy), Chennai, India</div>
+                    </div>
+                    <div class="job-duration">Aug 2020 – Dec 2021</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Conducted root cause analysis (RCA) using the 8D methodology for over 50 turbine control issues, streamlining resolutions across a fleet of 1500+ wind turbines</li>
+                    <li>Resolved control system anomalies in wind turbines, reducing operational downtime by 15%, and compiled 20+ analytical reports</li>
+                    <li>Validated over 1500 control parameters, enhancing system stability and overall performance in wind turbine operations</li>
+                    <li>Championed continuous improvement initiatives by gathering team input and executing field changes, resulting in a 25% reduction in operational costs</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Intern, Engine Assembly Department</div>
+                        <div class="company">Royal Enfield – Eicher Motors, Chennai, India</div>
+                    </div>
+                    <div class="job-duration">Nov 2018 – Dec 2018</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Performed time study analysis of assembly processes, identifying opportunities to improve speed by 7% without compromising quality</li>
+                    <li>Developed and updated assembly process documentation, reducing training time by 30% across all teams</li>
+                    <li>Assisted in assembling over 200 Royal Enfield engines, gaining hands-on experience in motor mechanics and assembly operations</li>
+                    <li>Collaborated with senior engineers to resolve 10+ assembly line issues through RCA, contributing to a 5% improvement in process efficiency</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Publications & Research Projects</h2>
+            
+            <div class="publication-entry">
+                <div class="publication-title">Design, Development, and Evaluation of a Soft Wearable Robotic Elbow Exoskeleton for Reducing Muscle Activity and Perceived Workload</div>
+                <div class="publication-venue">Journal of Rehabilitation and Assistive Technologies Engineering (Submitted/Under Review)</div>
+                <ul class="publication-highlights">
+                    <li>Developed and tested a soft wearable robotic elbow exoskeleton to reduce muscle strain using Surface Electromyography (EMG)</li>
+                    <li>Achieved a 22.36% reduction in biceps and 18.19% in triceps muscle activity</li>
+                    <li>Utilized torque and inflation time tests for mechanical evaluation, confirming precise control and optimal actuation speed</li>
+                </ul>
+            </div>
+
+            <div class="publication-entry">
+                <div class="publication-title">Evaluating an Elbow Exoskeleton for Reducing Work-related Musculoskeletal Disorders Risk: An Interdisciplinary Study</div>
+                <div class="publication-venue">Proceedings of the IISE Annual Conference & Expo 2024 (Presented/Published)</div>
+                <ul class="publication-highlights">
+                    <li>Conducted EMG analysis during occupational tasks, using MATLAB for signal processing including bandpass filtering and rectification</li>
+                    <li>Evaluated cognitive workload and user perception, highlighting the exoskeleton's effectiveness in reducing muscle strain</li>
+                </ul>
+            </div>
+
+            <div class="publication-entry">
+                <div class="publication-title">Depth Perception and Task Performance in Robotic Teleoperation</div>
+                <div class="publication-venue">Proceedings of the IISE Annual Conference & Expo 2024 (Presented/Published)</div>
+                <ul class="publication-highlights">
+                    <li>Investigated the impact of visual feedback on depth perception and task performance using VR and 360° video</li>
+                    <li>Significantly reduced task completion time and errors compared to 2D feedback</li>
+                    <li>Evaluated operator comfort and mental workload using NASA-TLX methodology</li>
+                </ul>
+            </div>
+
+            <div class="publication-entry">
+                <div class="publication-title">Improving Task Performance in Robotic Teleoperation Using 3D (Binocular) Visual Cues</div>
+                <div class="publication-venue">Proceedings of the 68th HFES International Annual Meeting (Presented)</div>
+                <ul class="publication-highlights">
+                    <li>Conducted in-depth analysis into interdependencies between object type, participant experience, and visual feedback</li>
+                    <li>Leveraged ANOVA and multiple linear regression (MLR) to uncover significant correlations</li>
+                    <li>Demonstrated notable reductions in task time and error rates with 3D visual cues</li>
+                </ul>
+            </div>
+
+            <div class="publication-entry">
+                <div class="publication-title">Reducing Engine Oil Consumption in Engines</div>
+                <div class="publication-venue">Industrial Project</div>
+                <ul class="publication-highlights">
+                    <li>Led a quality improvement initiative to reduce engine oil consumption from 5.8% to below 2%</li>
+                    <li>Used DMAIC methodology to systematically analyze and resolve root causes</li>
+                    <li>Leveraged P-charts, CE diagrams, and Pareto analysis to identify critical issues</li>
+                </ul>
+            </div>
+
+            <div class="publication-entry">
+                <div class="publication-title">Thermal Reliability Optimization of BGA Package under Cyclic Loading</div>
+                <div class="publication-venue">Research Project</div>
+                <ul class="publication-highlights">
+                    <li>Conducted detailed thermal cycling simulations of BGA package using ANSYS</li>
+                    <li>Optimized material properties and mesh refinement for accurate stress and deformation predictions</li>
+                    <li>Analyzed the effect of varying CTE values on PCB reliability and identified potential failure points</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Technical Skills & Knowledge Base</h2>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h3>Experimental Design & Analysis</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Design of Experiments (DOE)</span>
+                        <span class="skill-item">Statistical Modelling</span>
+                        <span class="skill-item">Biomechanical Testing</span>
+                        <span class="skill-item">EMG Analysis</span>
+                        <span class="skill-item">Life Cycle Assessment</span>
+                        <span class="skill-item">Human-Robot Interaction</span>
+                        <span class="skill-item">Usability Testing</span>
+                        <span class="skill-item">Reliability Engineering</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Manufacturing & Quality</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Design for Manufacturing</span>
+                        <span class="skill-item">Manufacturing Processes</span>
+                        <span class="skill-item">Continuous Improvement</span>
+                        <span class="skill-item">Statistical Process Control</span>
+                        <span class="skill-item">Time Study</span>
+                        <span class="skill-item">Root Cause Analysis</span>
+                        <span class="skill-item">FMEA</span>
+                        <span class="skill-item">GD&T</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Software & CAD Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">SolidWorks</span>
+                        <span class="skill-item">AutoCAD</span>
+                        <span class="skill-item">Siemens NX</span>
+                        <span class="skill-item">ANSYS</span>
+                        <span class="skill-item">SpaceClaim</span>
+                        <span class="skill-item">CATIA</span>
+                        <span class="skill-item">MATLAB</span>
+                        <span class="skill-item">Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Data Analysis & Programming</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Minitab</span>
+                        <span class="skill-item">SAS</span>
+                        <span class="skill-item">NI LabVIEW</span>
+                        <span class="skill-item">Statistical Analysis</span>
+                        <span class="skill-item">Data Visualization</span>
+                        <span class="skill-item">Machine Learning</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Manufacturing Equipment</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">5-axis CNC machines</span>
+                        <span class="skill-item">Milling Machine</span>
+                        <span class="skill-item">Lathe</span>
+                        <span class="skill-item">Drill Press</span>
+                        <span class="skill-item">3D Printing</span>
+                        <span class="skill-item">WAAM Process</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <div class="cert-title">Certified SolidWorks Associate (CSWA)</div>
+                    <div class="cert-issuer">Dassault Systèmes</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Certified Biomedical Research (CITI)</div>
+                    <div class="cert-issuer">CITI Program</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Certified GCP – Clinical Trials (CITI)</div>
+                    <div class="cert-issuer">CITI Program</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Human Subjects Protection Training</div>
+                    <div class="cert-issuer">HSP-UTA</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Certified Six Sigma Green Belt (CSSGB)</div>
+                    <div class="cert-issuer">ASQ</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Certified Lean Green Belt (CLGB)</div>
+                    <div class="cert-issuer">SME</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Awards & Honors</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-title">Elinor Paper Endowed Scholar</div>
+                    <div class="award-description">Awarded for Outstanding Industrial Engineering Student Achievement</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-title">Alpha Pi Mu Honor Society</div>
+                    <div class="award-description">Academic Excellence Recognition in Industrial Engineering</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-title">Best Graduate Student Researcher</div>
+                    <div class="award-description">UTA Research Institute (Fall 2023 and Spring 2024)</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-title">IICDC '19 Design Contest Finalist</div>
+                    <div class="award-description">Texas Instruments - Round of 16 Finalist</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+</body>
+</html>

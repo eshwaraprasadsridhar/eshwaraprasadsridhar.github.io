@@ -1,0 +1,30 @@
+# Resume and Personal Information
+Resume.txt
+
+# Hugo generated files
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Node modules and dependencies
+node_modules/
+package-lock.json
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.log
