@@ -41,14 +41,14 @@ SRM Institute of Science and Technology, Chennai, India
 ## Research Experience
 
 ### Graduate Research Assistant | *Jan 2025 - Present*
-**Human Factors and HCI Lab**, Northeastern University
+**Human Factors and HCI Lab**, The University of Texas at Arlington
 
 • Investigating human-AI teaming dynamics in sociotechnical systems with focus on trust, transparency, and adaptability  
 • Developing metrics for evaluating human cognition and performance in AI-assisted decision making  
 • Designing and conducting user studies with conversational agents and immersive simulation environments  
 • Applying computational approaches to analyze human behavior patterns in human-AI collaboration
 
-### Graduate Research Assistant | *Sept 2023 - Dec 2024*
+### Graduate Research Assistant | *Sept 2023 - MAY 2024*
 **UTA Research Institute & Department of IMSE**, Texas, USA
 
 • Prototyped and tested a Soft Wearable Robotic Elbow Exoskeleton, prioritizing user comfort and functionality to reduce musculoskeletal disorder risk  
@@ -92,7 +92,7 @@ SRM Institute of Science and Technology, Chennai, India
 ### Journal Papers
 
 **Design, Development, and Evaluation of a Soft Wearable Robotic Elbow Exoskeleton for Reducing Muscle Activity and Perceived Workload**  
-*Journal of Rehabilitation and Assistive Technologies Engineering* (Submitted/Under Review)
+*Journal of Rehabilitation and Assistive Technologies Engineering* (Published)
 
 • Developed and tested a soft wearable robotic elbow exoskeleton to reduce muscle strain, using Surface Electromyography (EMG) and biomechanical analysis to evaluate performance  
 • Achieved a 22.36% reduction in biceps and 18.19% in triceps muscle activity, demonstrating the exoskeleton's effectiveness in minimizing work-related musculoskeletal disorders  

@@ -27,17 +27,32 @@
         body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;color:var(--text-color);background:var(--bg-color);line-height:1.7}
         a{color:var(--accent-color);text-decoration:none}
         a:hover{text-decoration:underline}
-        .container{max-width:920px;margin:0 auto;padding:2rem 1rem}
+    .container{max-width:980px;margin:0 auto;padding:2rem 1rem}
         header.site-header{border-bottom:1px solid var(--border-color);background:var(--bg-color);position:sticky;top:0;z-index:20}
-        .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-        .identity{display:flex;align-items:center;gap:1rem}
+    .header-inner{display:none}
+    .identity{display:none}
+    .header-grid{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:.5rem 1rem;align-items:center}
+    .brand{display:flex;align-items:baseline;gap:.75rem}
+    .identity{display:none}
     .avatar{display:none}
     .logo-text{font-weight:800;letter-spacing:.5px;font-size:1.3rem}
     .title h1{font-weight:700;font-size:1.4rem}
         .title .subtitle{font-size:.95rem;color:var(--text-secondary)}
         nav.top-nav ul{display:flex;gap:1rem;list-style:none}
-        nav.top-nav a{display:block;padding:.5rem .75rem;border-radius:.5rem}
+    nav.top-nav a{display:block;padding:.5rem .75rem;border-radius:.5rem;position:relative}
+    nav.top-nav a::after{content:"";position:absolute;left:.75rem;right:.75rem;bottom:.2rem;height:2px;background:currentColor;opacity:0;transform:scaleX(.2);transition:opacity .15s ease, transform .15s ease}
+    nav.top-nav a:hover::after{opacity:.7;transform:scaleX(1)}
         main.main{padding-top:1rem}
+    .header-controls{display:flex;align-items:center;gap:.75rem}
+    .header-meta{grid-column:1/-1;color:var(--text-secondary);font-size:.95rem}
+    .page{display:grid;grid-template-columns:1fr 260px;gap:2rem}
+    .page-main{min-width:0}
+    .toc{position:sticky;top:80px;align-self:start;border-left:1px solid var(--border-color);padding-left:1rem;color:var(--text-secondary);font-size:.95rem}
+    .toc-title{font-weight:600;color:var(--text-color);margin-bottom:.5rem}
+    .toc a{color:var(--text-secondary);text-decoration:none}
+    .toc a:hover{color:var(--text-color);text-decoration:underline}
+    .toc ul{list-style:none;padding-left:.5rem}
+    .toc ul ul{padding-left:1rem}
     /* Slider theme toggle */
     .toggle{position:relative;width:56px;height:28px;background:var(--card-bg);border:1px solid var(--border-color);border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;padding:2px}
     .toggle .knob{width:24px;height:24px;border-radius:50%;background:var(--text-secondary);transform:translateX(0);transition:transform .2s ease, background .2s ease}
@@ -58,22 +73,14 @@
     </style>
 </head>
 <body>
+    
     <header class="site-header">
-        <div class="container header-inner">
-            <div class="identity">
+        <div class="container header-grid">
+            <div class="brand">
                 <div class="logo-text">ESHWARA PRASAD SRIDHAR</div>
-                <div class="title">
-                    <h1>Eshwara Prasad Sridhar</h1>
-                    <div class="subtitle">
-                        PhD Student · <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/imse" target="_blank" rel="noopener">UTA IMSE</a>
-                        · <a href="mailto:exs3645@mavs.uta.edu">exs3645@mavs.uta.edu</a>
-                        · <a href="https://scholar.google.com/citations?user=6GXB3qEAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
-                        · <a href="https://github.com/eshwaraprasadsridhar" target="_blank" rel="noopener">GitHub</a>
-                        · <a href="https://www.linkedin.com/in/eshwaraprasad/" target="_blank" rel="noopener">LinkedIn</a>
-                    </div>
-                </div>
+                <h1>Eshwara Prasad Sridhar</h1>
             </div>
-            <div style="display:flex;align-items:center;gap:.5rem">
+            <div class="header-controls">
                 <nav class="top-nav" aria-label="Primary">
                     <ul>
                         <li><a href="/">Home</a></li>
@@ -89,13 +96,36 @@
                     <span class="knob"></span>
                 </button>
             </div>
+            <div class="header-meta">
+                PhD Student · <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/imse" target="_blank" rel="noopener">UTA IMSE</a>
+                · <a href="mailto:exs3645@mavs.uta.edu">exs3645@mavs.uta.edu</a>
+                · <a href="https://scholar.google.com/citations?user=6GXB3qEAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+                · <a href="https://github.com/eshwaraprasadsridhar" target="_blank" rel="noopener">GitHub</a>
+                · <a href="https://www.linkedin.com/in/eshwaraprasad/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
         </div>
     </header>
+    
     <main class="main">
-        <div class="container content">
-            <div class="reveal">
-                {{ block "main" . }}{{ end }}
+        <div class="container page">
+            <div class="page-main content">
+                <div class="reveal">
+                    {{ block "main" . }}{{ end }}
+                </div>
             </div>
+            <aside class="toc">
+                <div class="toc-title">On this page</div>
+                {{ $toc := .TableOfContents }}
+                {{ if $toc }}
+                    {{ $toc | safeHTML }}
+                {{ else }}
+                    <ul>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#news">News</a></li>
+                        <li><a href="/#publications">Publications</a></li>
+                    </ul>
+                {{ end }}
+            </aside>
         </div>
     </main>
     <footer class="site-footer">
