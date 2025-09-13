@@ -45,7 +45,7 @@
     .header-meta{grid-column:1/-1;color:var(--text-secondary);font-size:.95rem}
     .page{display:grid;grid-template-columns:1fr 260px;gap:2rem}
     .page-main{min-width:0}
-    .toc{position:sticky;top:80px;align-self:start;border-left:1px solid var(--border-color);padding-left:1rem;color:var(--text-secondary);font-size:.95rem;max-height:calc(100vh - 110px);overflow:auto}
+    .toc{position:sticky;top:84px;align-self:start;border-left:1px solid var(--border-color);padding-left:1rem;color:var(--text-secondary);font-size:.95rem;max-height:calc(100vh - 120px);overflow:auto}
     .toc-title{font-weight:600;color:var(--text-color);margin-bottom:.5rem}
     .toc a{color:var(--text-secondary);text-decoration:none}
     .toc a:hover{color:var(--text-color);text-decoration:underline}
@@ -64,9 +64,9 @@
     .reveal.show{opacity:1;transform:none}
         footer.site-footer{border-top:1px solid var(--border-color);color:var(--text-secondary);padding-top:1.5rem;margin-top:3rem;text-align:center}
         /* Content headings similar to reference */
-        .content h2{font-size:1.5rem;font-weight:600;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-color)}
+    .content h2{font-size:1.5rem;font-weight:600;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-color);scroll-margin-top:110px}
         .content > h2:first-of-type{margin-top:.75rem}
-        .content h3{font-size:1.1rem;font-weight:600;margin:1rem 0 .5rem}
+    .content h3{font-size:1.1rem;font-weight:600;margin:1rem 0 .5rem;scroll-margin-top:110px}
         .content p{margin:.75rem 0;text-align:justify}
         .news-item{padding:1rem;border:1px solid var(--border-color);border-radius:.5rem;background:var(--card-bg);margin:.75rem 0}
         .news-date{font-weight:600;color:var(--text-secondary);margin-bottom:.25rem}
@@ -244,6 +244,27 @@
             }
             // Desktop aside and mobile details
             setupTOC('aside.toc, #mobileToc');
+
+            // Smooth scroll with offset for ToC clicks
+            function enableTocSmoothScroll(){
+                const tocLinks = document.querySelectorAll('aside.toc a[href^="#"], #mobileToc a[href^="#"]');
+                const headerOffset = 100;
+                tocLinks.forEach(a=>{
+                    a.addEventListener('click', (e)=>{
+                        const href = a.getAttribute('href');
+                        if(!href || href.charAt(0) !== '#') return;
+                        const id = decodeURIComponent(href.substring(1));
+                        const target = document.getElementById(id);
+                        if(target){
+                            e.preventDefault();
+                            const y = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+                            window.scrollTo({top:y, behavior:'smooth'});
+                            history.replaceState(null, '', `#${id}`);
+                        }
+                    });
+                });
+            }
+            enableTocSmoothScroll();
         })();
     </script>
 </body>
