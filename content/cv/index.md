@@ -1,11 +1,7 @@
 ---
 title: "Curriculum Vitae"
 draft: false
----
-
----
-title: "Curriculum Vitae"
-draft: false
+outputs: ["html"]
 ---
 
 <div class="cv-updated">
