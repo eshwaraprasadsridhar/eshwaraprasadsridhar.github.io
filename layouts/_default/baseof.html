@@ -43,10 +43,12 @@
         main.main{padding-top:1rem}
     .header-controls{display:flex;align-items:center;gap:.75rem}
     .header-controls .toggle{margin-left:auto}
-    .header-meta{grid-column:1/-1;color:var(--text-secondary);font-size:.85rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;white-space:nowrap}
+    .header-meta{grid-column:1/-1;color:var(--text-secondary);font-size:.85rem;display:flex;align-items:center;white-space:nowrap}
+    .header-meta .affiliation{flex:1}
+    .header-meta .social-icons{margin-left:auto}
     @media (max-width: 768px) {
         .header-meta{font-size:.8rem;flex-wrap:wrap}
-        .header-meta .social-icons{order:2;margin-top:.25rem}
+        .header-meta .social-icons{order:2;margin-top:.25rem;margin-left:0}
     }
     .page{display:grid;grid-template-columns:1fr 260px;gap:2rem}
     .page-main{min-width:0}
@@ -137,7 +139,7 @@
                 </button>
             </div>
             <div class="header-meta">
-                Ph.D. Student – <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/industrial" target="_blank" rel="noopener">IMSE</a>, <a href="https://www.uta.edu" target="_blank" rel="noopener">UTA</a>
+                <div class="affiliation">Ph.D. Student – <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/industrial" target="_blank" rel="noopener">IMSE</a>, <a href="https://www.uta.edu" target="_blank" rel="noopener">UTA</a></div>
                 <div class="social-icons">
                     <a href="mailto:exs3645@mavs.uta.edu" class="social-icon" title="Email" aria-label="Email">
                         <svg viewBox="0 0 24 24" fill="currentColor">
