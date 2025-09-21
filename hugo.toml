@@ -9,6 +9,12 @@ title = 'Eshwara Prasad Sridhar'
 enableRobotsTXT = true
 enableEmoji = true
 
+# Output formats
+[outputs]
+  home = ["html"]
+  section = ["html"]
+  page = ["html"]
+
 # Markup settings
 [markup]
   [markup.goldmark]

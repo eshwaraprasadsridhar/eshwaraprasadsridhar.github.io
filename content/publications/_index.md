@@ -2,6 +2,7 @@
 title: "Publications"
 description: "Research publications by Eshwara Prasad Sridhar"
 draft: false
+outputs: ["html"]
 ---
 
 ## Publications
