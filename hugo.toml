@@ -1,0 +1,29 @@
+baseURL = 'https://eshwaraprasadsridhar.github.io'
+languageCode = 'en-us'
+title = 'Eshwara Prasad Sridhar'
+
+# Build settings
+[pagination]
+  pagerSize = 10
+
+enableRobotsTXT = true
+enableEmoji = true
+
+# Markup settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'github'
+    lineNos = false
+
+# Author settings
+[author]
+  name = "Eshwara Prasad Sridhar"
+  email = "exs3645@mavs.uta.edu"
+
+# Params
+[params]
+  author = "Eshwara Prasad Sridhar"
+  description = "Ph.D. Student in Industrial Engineering at UT Arlington"

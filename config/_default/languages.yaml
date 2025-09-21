@@ -1,0 +1,23 @@
+en:
+  languageName: 'English'
+  languageCode: 'en'
+  weight: 1
+  title: 'Eshwara Prasad Sridhar'
+  
+  params:
+    description: 'Ph.D. Student in Industrial Engineering at UT Arlington'
+    
+  menu:
+    main:
+      - name: 'About'
+        url: '/#about'
+        weight: 10
+      - name: 'News'  
+        url: '/#news'
+        weight: 20
+      - name: 'Publications'
+        url: '/#publications'
+        weight: 30
+      - name: 'CV'
+        url: '/cv/'
+        weight: 40

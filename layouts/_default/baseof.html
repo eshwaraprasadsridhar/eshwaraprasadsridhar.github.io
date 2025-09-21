@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <style>
+        :root{
+            --text-color:#222;
+            --text-secondary:#666;
+            --bg-color:#fff;
+            --card-bg:#fff;
+            --border-color:#e5e7eb;
+            --accent-color:#111;
+            --header-h:84px; /* will be updated via JS */
+        }
+        [data-theme="dark"]{
+            --text-color:#e5e7eb;
+            --text-secondary:#9ca3af;
+            --bg-color:#000;
+            --card-bg:#111;
+            --border-color:#27272a;
+            --accent-color:#e5e7eb;
+        }
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;color:var(--text-color);background:var(--bg-color);line-height:1.7}
+        a{color:var(--accent-color);text-decoration:none}
+        a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto;padding:1.5rem 1rem}
+        header.site-header{border-bottom:1px solid var(--border-color);background:var(--bg-color);position:sticky;top:0;z-index:20}
+    .header-inner{display:none}
+    .identity{display:none}
+    .header-grid{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:.5rem 1rem;align-items:center}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .title h1{font-weight:700;font-size:1.2rem}
+        .title .subtitle{font-size:.95rem;color:var(--text-secondary)}
+        nav.top-nav ul{display:flex;gap:1rem;list-style:none}
+    nav.top-nav a{display:block;padding:.5rem .75rem;border-radius:.5rem;position:relative}
+    nav.top-nav a::after{content:"";position:absolute;left:.75rem;right:.75rem;bottom:.2rem;height:2px;background:currentColor;opacity:0;transform:scaleX(.2);transition:opacity .15s ease, transform .15s ease}
+    nav.top-nav a:hover::after{opacity:.7;transform:scaleX(1)}
+        main.main{padding-top:1rem}
+    .header-controls{display:flex;align-items:center;gap:.75rem}
+    .header-controls .toggle{margin-left:auto}
+    .header-meta{grid-column:1/-1;color:var(--text-secondary);font-size:.95rem}
+    .page{display:grid;grid-template-columns:1fr 260px;gap:2rem}
+    .page-main{min-width:0}
+    .toc{position:sticky;top:var(--header-h);align-self:start;border-left:1px solid var(--border-color);padding-left:1rem;color:var(--text-secondary);font-size:.95rem;max-height:calc(100vh - (var(--header-h) + 24px));overflow:auto}
+    .toc-title{font-weight:600;color:var(--text-color);margin-bottom:.5rem}
+    .toc a{color:var(--text-secondary);text-decoration:none}
+    .toc a:hover{color:var(--text-color);text-decoration:underline}
+    .toc ul{list-style:none;padding-left:.5rem}
+    .toc ul ul{padding-left:1rem}
+    .toc a.active{color:var(--text-color);font-weight:600}
+    /* Slider theme toggle */
+    .toggle{position:relative;width:56px;height:28px;background:var(--card-bg);border:1px solid var(--border-color);border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;padding:2px}
+    .toggle .knob{width:24px;height:24px;border-radius:50%;background:var(--text-secondary);transform:translateX(0);transition:transform .2s ease, background .2s ease}
+    [data-theme="dark"] .toggle .knob{transform:translateX(28px);background:var(--accent-color)}
+    .toggle .icon{position:absolute;width:16px;height:16px;opacity:.75}
+    .toggle .icon.sun{left:8px}
+    .toggle .icon.moon{right:8px}
+    /* Scroll-in animation */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .4s ease, transform .4s ease}
+    .reveal.show{opacity:1;transform:none}
+        footer.site-footer{border-top:1px solid var(--border-color);color:var(--text-secondary);padding-top:1.5rem;margin-top:3rem;text-align:center}
+        /* Content headings similar to reference */
+    .content h2{font-size:1.5rem;font-weight:600;margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-color);scroll-margin-top:calc(var(--header-h) + 20px)}
+        .content > h2:first-of-type{margin-top:.75rem}
+    .content h3{font-size:1.1rem;font-weight:600;margin:1rem 0 .5rem;scroll-margin-top:calc(var(--header-h) + 20px)}
+        .content p{margin:.75rem 0;text-align:justify}
+        .news-item{padding:1rem;border:1px solid var(--border-color);border-radius:.5rem;background:var(--card-bg);margin:.75rem 0}
+        .news-date{font-weight:600;color:var(--text-secondary);margin-bottom:.25rem}
+
+    /* Mobile optimizations: collapse ToC and stack layout */
+    @media (max-width: 900px){
+        .page{grid-template-columns:1fr}
+        aside.toc{display:none}
+        .mobile-toc{display:block}
+    }
+    .mobile-toc{display:none;margin:0 0 1rem 0}
+    .mobile-toc details{background:var(--card-bg);border:1px solid var(--border-color);border-radius:.5rem;padding:.5rem .75rem}
+    .mobile-toc summary{cursor:pointer;font-weight:600;color:var(--text-color)}
+    .mobile-toc .toc-body{margin-top:.5rem;max-height:50vh;overflow:auto}
+    .mobile-toc a{color:var(--text-secondary)}
+    .mobile-toc a.active{color:var(--text-color);font-weight:600}
+    /* Logo text emphasis */
+    .logo-text{font-weight:900;letter-spacing:.5px;font-size:1.3rem}
+
+    /* Publications styling */
+    .publication{padding:1rem 0;border-bottom:1px solid var(--border-color)}
+    .publication:last-child{border-bottom:none}
+    .publication-title{font-weight:600;line-height:1.35}
+    .publication-title a{color:var(--text-color);text-decoration:none}
+    .publication-title a:hover{text-decoration:underline}
+    .publication-authors{margin-top:.2rem;color:var(--text-secondary);font-style:italic;font-size:.95rem}
+    .publication-venue{margin-top:.25rem;color:var(--text-secondary);font-size:.9rem}
+    </style>
+</head>
+<body>
+    
+    <header class="site-header">
+        <div class="container header-grid">
+            <div class="brand">
+                <div class="logo-text">ESHWARA PRASAD SRIDHAR</div>
+            </div>
+            <div class="header-controls">
+                <nav class="top-nav" aria-label="Primary">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/cv/">CV</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme" onclick="toggleTheme()">
+                    <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.54 6.46-1.42-1.42M7.88 7.88 6.46 6.46m10.12 0-1.42 1.42M7.88 16.12 6.46 17.54"/></svg>
+                    <svg class="icon moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <span class="knob"></span>
+                </button>
+            </div>
+            <div class="header-meta">
+                PhD Student · <a href="https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/industrial" target="_blank" rel="noopener">UTA IMSE</a>
+                · <a href="mailto:exs3645@mavs.uta.edu">exs3645@mavs.uta.edu</a>
+                · <a href="https://scholar.google.com/citations?user=6GXB3qEAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+                · <a href="https://github.com/eshwaraprasadsridhar" target="_blank" rel="noopener">GitHub</a>
+                · <a href="https://www.linkedin.com/in/eshwaraprasad/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="container page">
+            <!-- Mobile ToC (collapsed) shown only on small screens -->
+            {{ $mtoc := .TableOfContents }}
+            {{ if $mtoc }}
+            <div class="mobile-toc" id="mobileToc">
+                <details>
+                    <summary>On this page</summary>
+                    <div class="toc-body">
+                        {{ $mtoc | safeHTML }}
+                    </div>
+                </details>
+            </div>
+            {{ end }}
+            <div class="page-main content">
+                <div class="reveal">
+                    {{ block "main" . }}{{ end }}
+                </div>
+            </div>
+            {{ $toc := .TableOfContents }}
+            {{ if $toc }}
+            <aside class="toc">
+                <div class="toc-title">On this page</div>
+                {{ $toc | safeHTML }}
+            </aside>
+            {{ end }}
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            &copy; {{ now.Year }} Eshwara Prasad Sridhar · Built with Hugo
+        </div>
+    </footer>
+    <script>
+    function toggleTheme(){
+            const html=document.documentElement;
+            const cur=html.getAttribute('data-theme');
+            const next=cur==='dark'?'light':'dark';
+            html.setAttribute('data-theme',next);
+            localStorage.setItem('theme',next);
+        }
+        (function init(){
+            const saved=localStorage.getItem('theme');
+            const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme=saved || (prefersDark? 'dark':'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            // Scroll reveal
+            const els=document.querySelectorAll('.reveal');
+            const io=new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+            },{threshold:0.1});
+            els.forEach(el=>io.observe(el));
+
+            // ToC active highlight + auto scroll
+            function getHeaderHeight(){
+                const header=document.querySelector('header.site-header');
+                return header ? Math.ceil(header.getBoundingClientRect().height) : 84;
+            }
+            document.documentElement.style.setProperty('--header-h', getHeaderHeight()+ 'px');
+            window.addEventListener('resize', ()=>{
+                document.documentElement.style.setProperty('--header-h', getHeaderHeight()+ 'px');
+            });
+
+            function setupTOC(scope){
+                const tocContainers = Array.from(document.querySelectorAll(scope));
+                if(!tocContainers.length) return;
+                const headingSelector = '.content h2[id], .content h3[id]';
+                let headings = Array.from(document.querySelectorAll(headingSelector));
+                if(!headings.length) return;
+
+                const linkMaps = tocContainers.map(ctn=>{
+                    const links = Array.from(ctn.querySelectorAll('a[href*="#"]'));
+                    const map = new Map();
+                    links.forEach(a=>{
+                        const href=a.getAttribute('href');
+                        const hash = href && href.split('#')[1];
+                        if(hash) map.set(hash,a);
+                    });
+                    return {container: ctn, map: map};
+                });
+
+                let positions = [];
+                function computePositions(){
+                    positions = headings.map(h=>({id:h.id, top:h.getBoundingClientRect().top + window.scrollY})).sort((a,b)=>a.top-b.top);
+                }
+                function setActive(id){
+                    linkMaps.forEach(({container,map})=>{
+                        map.forEach((a,key)=>{
+                            const isActive = key===id;
+                            a.classList.toggle('active', isActive);
+                            if(isActive){
+                                const parent = container.closest('aside.toc') ? container.closest('aside.toc') : container;
+                                if(parent && typeof parent.scrollTop !== 'undefined'){
+                                    a.scrollIntoView({block:'nearest'});
+                                }
+                            }
+                        });
+                    });
+                }
+                function onScroll(){
+                    const y = window.scrollY + getHeaderHeight() + 20; // dynamic header offset
+                    let current = positions.length ? positions[0].id : null;
+                    for(const p of positions){ if(p.top <= y) current = p.id; else break; }
+                    if(current) setActive(current);
+                }
+                computePositions();
+                onScroll();
+                window.addEventListener('scroll', onScroll, {passive:true});
+                window.addEventListener('resize', ()=>{ headings = Array.from(document.querySelectorAll(headingSelector)); computePositions(); onScroll(); });
+            }
+            // Desktop aside and mobile details
+            setupTOC('aside.toc, #mobileToc');
+
+            // Smooth scroll with offset for ToC clicks
+            function enableTocSmoothScroll(){
+                const tocLinks = document.querySelectorAll('aside.toc a[href^="#"], #mobileToc a[href^="#"]');
+                const headerOffset = getHeaderHeight() + 20;
+                tocLinks.forEach(a=>{
+                    a.addEventListener('click', (e)=>{
+                        const href = a.getAttribute('href');
+                        if(!href || href.charAt(0) !== '#') return;
+                        const id = decodeURIComponent(href.substring(1));
+                        const target = document.getElementById(id);
+                        if(target){
+                            e.preventDefault();
+                            const y = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+                            window.scrollTo({top:y, behavior:'smooth'});
+                            history.replaceState(null, '', `#${id}`);
+                        }
+                    });
+                });
+            }
+            enableTocSmoothScroll();
+        })();
+    </script>
+</body>
+</html>
