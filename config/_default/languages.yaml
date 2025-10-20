@@ -19,5 +19,7 @@ en:
         url: '/#publications'
         weight: 30
       - name: 'CV'
-        url: '/cv/'
+        url: '/resume.pdf'
         weight: 40
+        params:
+          external: true
