@@ -30,6 +30,11 @@ I am a PhD student in Industrial Engineering focusing on Human Factors and Human
 ### 2025
 
 <div class="news-item">
+<div class="news-date">October 2025</div>
+Gave an oral presentation and published a paper at the ASPIRE 2025 (HFES) conference in Chicago, Illinois, USA.
+</div>
+
+<div class="news-item">
 <div class="news-date">May 2025</div>
 Published three research papers at the Institute of Industrial & Systems Engineers (IISE) Annual Conference and Expo 2025 — Atlanta, Georgia, USA.
 </div>
