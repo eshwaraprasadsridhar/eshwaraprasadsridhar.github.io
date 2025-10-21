@@ -19,7 +19,7 @@ en:
         url: '/#news'
         weight: 30
       - name: 'Publications'
-        url: '/#publications'
+        url: '/publications/'
         weight: 40
       - name: 'CV'
         url: '/resume.pdf'
