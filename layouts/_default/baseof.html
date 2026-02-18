@@ -50,9 +50,9 @@
         .header-meta{font-size:.8rem;flex-wrap:wrap}
         .header-meta .social-icons{order:2;margin-top:.25rem;margin-left:0}
     }
-    .page{display:grid;grid-template-columns:1fr 260px;gap:2rem}
+    .page{display:grid;grid-template-columns:220px 1fr;gap:2rem}
     .page-main{min-width:0}
-    .toc{position:sticky;top:var(--header-h);align-self:start;border-left:1px solid var(--border-color);padding-left:1rem;color:var(--text-secondary);font-size:.95rem;max-height:calc(100vh - (var(--header-h) + 24px));overflow:auto}
+    .toc{position:sticky;top:var(--header-h);align-self:start;border-right:1px solid var(--border-color);padding-right:1rem;color:var(--text-secondary);font-size:.95rem;max-height:calc(100vh - (var(--header-h) + 24px));overflow:auto}
     .toc-title{font-weight:600;color:var(--text-color);margin-bottom:.5rem}
     .toc a{color:var(--text-secondary);text-decoration:none}
     .toc a:hover{color:var(--text-color);text-decoration:underline}
@@ -203,11 +203,6 @@
                 </details>
             </div>
             {{ end }}
-            <div class="page-main content">
-                <div class="reveal">
-                    {{ block "main" . }}{{ end }}
-                </div>
-            </div>
             {{ $toc := .TableOfContents }}
             {{ if $toc }}
             <aside class="toc">
@@ -215,6 +210,11 @@
                 {{ $toc | safeHTML }}
             </aside>
             {{ end }}
+            <div class="page-main content">
+                <div class="reveal">
+                    {{ block "main" . }}{{ end }}
+                </div>
+            </div>
         </div>
     </main>
     <footer class="site-footer">
