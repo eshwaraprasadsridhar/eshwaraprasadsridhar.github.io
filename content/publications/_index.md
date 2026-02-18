@@ -8,6 +8,13 @@ outputs: ["html"]
 ## Publications
 
 <div class="publication">
+	<div class="publication-title"><a href="https://doi.org/10.1016/j.iatssr.2025.12.005" target="_blank" rel="noopener">Sharing the road with autonomous vehicles: US cyclists' attitudes, concerns, and infrastructure needs</a></div>
+		<div class="publication-authors">Ngwu, Obiageli L.; Rahman, Mahmudur; <strong>Sridhar, Eshwara Prasad</strong></div>
+	<div class="publication-venue">IATSS Research, Volume 50, Issue 1, 2026, Pages 653-668</div>
+	<div class="publication-links"><a href="https://doi.org/10.1016/j.iatssr.2025.12.005" target="_blank" rel="noopener">[Paper]</a></div>
+	</div>
+
+<div class="publication">
 	<div class="publication-title"><a href="https://doi.org/10.1177/10711813251367362" target="_blank" rel="noopener">Adaptive De-escalation Trainer: Piloting a RAG-Enhanced, Emotionally Modulated AI Simulator for Police Training</a></div>
 		<div class="publication-authors"><strong>Sridhar, Eshwara Prasad</strong>; Lopez, Jose; Islam, Mohammad; Deb, Shuchisnigdha</div>
 	<div class="publication-venue">Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 2025</div>
