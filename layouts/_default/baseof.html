@@ -123,26 +123,16 @@
     .publication-links a{color:var(--accent-color);font-size:.9rem;text-decoration:none;font-weight:500}
     .publication-links a:hover{text-decoration:underline}
 
-    /* About + Research: structured, minimal layout */
-    .section-block{border-bottom:1px solid var(--border-color);padding-bottom:1.5rem;margin-bottom:1.75rem}
-    .about-lead{max-width:72ch;font-size:1.05rem;margin:.75rem 0 1rem}
-    .about-body{max-width:72ch;margin:.75rem 0}
-    .about-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem 1.5rem;margin:1rem 0}
-    .about-item{padding:.35rem 0;border-top:1px solid var(--border-color)}
-    .about-item:first-child{border-top:none}
-    .about-label{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary)}
-    .about-text{margin-top:.25rem}
+    /* About + Research: minimal typographic treatment */
+    .section-lead{max-width:72ch;font-size:1.05rem;margin:.75rem 0 1rem}
+    #about{border-bottom:1px solid var(--border-color);padding-bottom:1rem;margin-bottom:1.25rem}
+    #about p{max-width:72ch}
 
-    .research-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem 1.5rem;margin:.75rem 0 0}
-    .research-item{padding:.5rem 0;border-top:1px solid var(--border-color)}
-    .research-item:first-child{border-top:none}
-    .research-title{font-weight:600}
-    .research-sub{color:var(--text-secondary);font-size:.95rem;margin-top:.25rem}
-
-    @media (max-width: 900px){
-        .about-grid{grid-template-columns:1fr}
-        .research-grid{grid-template-columns:1fr}
-    }
+    .research-list{list-style:none;padding-left:0;margin:.5rem 0 0}
+    .research-list > li{position:relative;padding:.3rem 0 .3rem 1rem}
+    .research-list > li::before{content:"";position:absolute;left:0;top:1.05rem;width:6px;height:6px;border:1px solid var(--text-secondary);border-radius:50%}
+    .research-sublist{list-style:none;padding-left:0;margin:.35rem 0 0;color:var(--text-secondary);font-size:.95rem}
+    .research-sublist li{padding:.15rem 0 0 0}
     </style>
 </head>
 <body>

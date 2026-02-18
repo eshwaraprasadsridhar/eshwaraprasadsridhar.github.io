@@ -4,58 +4,33 @@ description: "PhD Student in Industrial Engineering focusing on Human Factors an
 draft: false
 ---
 
-<div id="about" class="section-block">
+<div id="about">
 
 ## About
 
-<p class="about-lead">I am a PhD student in Industrial Engineering at the University of Texas at Arlington, specializing in Human Factors and Human Computer Interaction, with a focus on Human AI Interaction and Human Robot Interaction within extended reality environments.</p>
+<p class="section-lead">I am a PhD student in Industrial Engineering at the University of Texas at Arlington, specializing in Human Factors and Human Computer Interaction, with a focus on Human AI Interaction and Human Robot Interaction within extended reality environments.</p>
 
-<div class="about-grid">
-<div class="about-item">
-<div class="about-label">Focus</div>
-<div class="about-text">Human AI Interaction and Human Robot Interaction in extended reality.</div>
-</div>
-<div class="about-item">
-<div class="about-label">Methods</div>
-<div class="about-text">Human subjects studies, experimental design, sensing, and data-driven analysis.</div>
-</div>
-<div class="about-item">
-<div class="about-label">Integration</div>
-<div class="about-text">Instrumentation, computer vision, and immersive simulation for measurement.</div>
-</div>
-<div class="about-item">
-<div class="about-label">Goal</div>
-<div class="about-text">Translate human centered data into practical design insights.</div>
-</div>
-</div>
+My research examines how people interact with intelligent and embodied systems across digital, physical, and immersive settings. I design and conduct human subjects studies to quantify behavior, perception, comfort, effort, and trust using a combination of experimental design, sensing technologies, and data-driven analysis.
 
-<p class="about-body">My research examines how people interact with intelligent and embodied systems across digital, physical, and immersive settings. I design and conduct human subjects studies to quantify behavior, perception, comfort, effort, and trust using a combination of experimental design, sensing technologies, and data-driven analysis.</p>
-
-<p class="about-body">With a background in Mechatronics and Industrial Engineering, I work at the intersection of human behavior, engineered systems, and measurement science. My work integrates instrumentation, computer vision, and immersive simulations to better understand human performance and to inform the design of technologies that align with real human use in training, engineering education, and operational environments.</p>
+With a background in Mechatronics and Industrial Engineering, I work at the intersection of human behavior, engineered systems, and measurement science. My work integrates instrumentation, computer vision, and immersive simulations to better understand human performance and to inform the design of technologies that align with real human use in training, engineering education, and operational environments.
 
 </div>
 
-<div id="research" class="section-block">
+<div id="research">
 
-## Research Interests
-<div class="research-grid">
-<div class="research-item">
-<div class="research-title">Human Factors and Human Computer Interaction</div>
-<div class="research-sub">Human AI Interaction (HAI) and Human Robot Interaction (HRI)</div>
-</div>
-<div class="research-item">
-<div class="research-title">Quantifying Human Behavior in Sociotechnical Systems</div>
-</div>
-<div class="research-item">
-<div class="research-title">Human Centered Experimental Design and Instrumentation</div>
-</div>
-<div class="research-item">
-<div class="research-title">Extended Reality for Engineering Education and Training</div>
-</div>
-<div class="research-item">
-<div class="research-title">Data Driven Evaluation of Human Performance and Trust</div>
-</div>
-</div>
+## Research Focus
+<ul class="research-list">
+<li>Human Factors and Human Computer Interaction
+<ul class="research-sublist">
+<li>Human AI Interaction (HAI)</li>
+<li>Human Robot Interaction (HRI)</li>
+</ul>
+</li>
+<li>Quantifying Human Behavior in Sociotechnical Systems</li>
+<li>Human Centered Experimental Design and Instrumentation</li>
+<li>Extended Reality for Engineering Education and Training</li>
+<li>Data Driven Evaluation of Human Performance and Trust</li>
+</ul>
 
 </div>
 
