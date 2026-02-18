@@ -76,12 +76,19 @@
         .content > h2:first-of-type{margin-top:.75rem}
     .content h3{font-size:1.1rem;font-weight:600;margin:1rem 0 .5rem;scroll-margin-top:calc(var(--header-h) + 20px)}
         .content p{margin:.75rem 0;text-align:justify}
-        .news-item{padding:1rem;border:1px solid var(--border-color);border-radius:.5rem;background:var(--card-bg);margin:.75rem 0}
-        .news-date{font-weight:600;color:var(--text-secondary);margin-bottom:.25rem}
-        
-        /* Improved news styling with year sections */
-        .content h3{font-size:1.15rem;font-weight:600;margin:1.5rem 0 .75rem;color:var(--accent-color);border-bottom:1px solid var(--border-color);padding-bottom:.25rem}
-        .content h3:first-of-type{margin-top:1rem}
+        .news-item{display:grid;grid-template-columns:120px 1fr;gap:1.25rem;padding:.6rem 0;border-bottom:1px solid var(--border-color)}
+        .news-item:last-child{border-bottom:none}
+        .news-date{font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--text-secondary)}
+        .news-text{color:var(--text-color)}
+
+        /* News year headings: lighter, minimal */
+        #news h3{font-size:.95rem;font-weight:600;margin:1.4rem 0 .5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);border:none}
+        #news h3:first-of-type{margin-top:1rem}
+
+        @media (max-width: 700px){
+            .news-item{grid-template-columns:1fr;gap:.25rem}
+            .news-date{font-size:.78rem}
+        }
 
     /* Mobile optimizations: collapse ToC and stack layout */
     @media (max-width: 900px){
