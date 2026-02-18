@@ -8,18 +8,26 @@ draft: false
 
 ## About
 
-I am a PhD student in Industrial Engineering focusing on Human Factors and Human-Computer Interaction, where I study human-AI teaming across sociotechnical systems. My research examines how people interact with conversational agents, immersive simulations, and physical AI, with a focus on developing metrics that capture human cognition, trust, and adaptability. By combining human factors principles with computational approaches, I aim to design frameworks that reveal how humans and AI shape each other in dynamic environments. This work seeks to inform the creation of AI systems that are not only technically capable but also ethically grounded and responsive to human needs.
+I am a PhD student in Industrial Engineering at the University of Texas at Arlington, specializing in Human Factors and Human Computer Interaction, with a focus on Human AI Interaction and Human Robot Interaction within extended reality environments.
+
+My research examines how people interact with intelligent and embodied systems across digital, physical, and immersive settings. I design and conduct human subjects studies to quantify behavior, perception, comfort, effort, and trust using a combination of experimental design, sensing technologies, and data-driven analysis.
+
+With a background in Mechatronics and Industrial Engineering, I work at the intersection of human behavior, engineered systems, and measurement science. My work integrates instrumentation, computer vision, and immersive simulations to better understand human performance and to inform the design of technologies that align with real human use in training, engineering education, and operational environments.
+
+My goal is to translate human centered data into practical design insights that make complex systems more usable, measurable, and responsive to people.
 
 </div>
 
 <div id="research">
 
 ## Research Interests
-- Human-AI Teaming and Collaboration
-- Conversational Agent Design and Evaluation
-- Trust and Transparency in AI Systems
-- Immersive Simulation Environments
-- Human Factors in Emerging Technologies
+- Human Factors and Human Computer Interaction
+	- Human AI Interaction (HAI)
+	- Human Robot Interaction (HRI)
+- Quantifying Human Behavior in Sociotechnical Systems
+- Human Centered Experimental Design and Instrumentation
+- Extended Reality for Engineering Education and Training
+- Data Driven Evaluation of Human Performance and Trust
 
 </div>
 
