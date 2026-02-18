@@ -122,6 +122,22 @@
     .publication-links{margin-top:.4rem}
     .publication-links a{color:var(--accent-color);font-size:.9rem;text-decoration:none;font-weight:500}
     .publication-links a:hover{text-decoration:underline}
+
+    /* About + Research: minimal, airy layout */
+    .about-block{border-bottom:1px solid var(--border-color);padding-bottom:1rem;margin-bottom:1.25rem}
+    .about-block p{max-width:72ch;margin:.85rem 0}
+    .about-block p:first-of-type{font-size:1.02rem}
+
+    .research-list{list-style:none;padding-left:0;margin:.5rem 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem 1.5rem}
+    .research-list > li{position:relative;padding:.35rem 0 .35rem 1rem;border-bottom:1px solid var(--border-color)}
+    .research-list > li::before{content:"";position:absolute;left:0;top:.9rem;width:6px;height:6px;border:1px solid var(--text-secondary);border-radius:50%}
+    .research-list > li:last-child{border-bottom:none}
+    .research-list ul{list-style:none;padding-left:0;margin:.25rem 0 0;color:var(--text-secondary);font-size:.95rem}
+    .research-list ul li{padding:.15rem 0}
+
+    @media (max-width: 900px){
+        .research-list{grid-template-columns:1fr}
+    }
     </style>
 </head>
 <body>

@@ -4,7 +4,7 @@ description: "PhD Student in Industrial Engineering focusing on Human Factors an
 draft: false
 ---
 
-<div id="about">
+<div id="about" class="about-block">
 
 ## About
 
@@ -18,16 +18,21 @@ My goal is to translate human centered data into practical design insights that 
 
 </div>
 
-<div id="research">
+<div id="research" class="research-block">
 
 ## Research Interests
-- Human Factors and Human Computer Interaction
-	- Human AI Interaction (HAI)
-	- Human Robot Interaction (HRI)
-- Quantifying Human Behavior in Sociotechnical Systems
-- Human Centered Experimental Design and Instrumentation
-- Extended Reality for Engineering Education and Training
-- Data Driven Evaluation of Human Performance and Trust
+<ul class="research-list">
+<li>Human Factors and Human Computer Interaction
+<ul>
+<li>Human AI Interaction (HAI)</li>
+<li>Human Robot Interaction (HRI)</li>
+</ul>
+</li>
+<li>Quantifying Human Behavior in Sociotechnical Systems</li>
+<li>Human Centered Experimental Design and Instrumentation</li>
+<li>Extended Reality for Engineering Education and Training</li>
+<li>Data Driven Evaluation of Human Performance and Trust</li>
+</ul>
 
 </div>
 
