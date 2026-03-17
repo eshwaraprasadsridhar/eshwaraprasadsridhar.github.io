@@ -44,14 +44,14 @@ With a background in Mechatronics and Industrial Engineering, I work at the inte
 
 <div class="news-item">
 <div class="news-date">March 2026</div>
-<div class="news-text">🏆 Student of the Year, selected from international participants at the Applied Ergonomics Conference (AEC 2026), Arlington, Texas; delivered two oral presentations at this international conference. <a href="https://www.linkedin.com/posts/eshwaraprasad_aec2026-appliedergo2026-aec2026-activity-7438632784929210368-kbXJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB39OOkB8RPEghA9I5_5nicK1Qi4U35Ej2k" target="_blank" rel="noopener">[Link]</a></div>
+<div class="news-text">Received the "Student of the Year 🏆" Award, selected from international participants at the Applied Ergonomics Conference 2026 in Arlington, Texas; delivered two oral presentations at this international conference. <a href="https://www.linkedin.com/posts/eshwaraprasad_aec2026-appliedergo2026-aec2026-activity-7438632784929210368-kbXJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB39OOkB8RPEghA9I5_5nicK1Qi4U35Ej2k" target="_blank" rel="noopener">[Link]</a></div>
 </div>
 
 ### 2025
 
 <div class="news-item">
 <div class="news-date">December 2025</div>
-<div class="news-text">Featured in national and international media for research on the Robotic Elbow Exoskeleton. <a href="https://www.dallasnews.com/news/2025/12/08/robotic-arm-made-in-north-texas-could-help-in-rehab-and-the-workplace/" target="_blank" rel="noopener">[Link]</a></div>
+<div class="news-text">Featured in national and international media for research on the Robotic Elbow Exoskeleton, including Dallas Morning News and other international outlets. <a href="https://www.dallasnews.com/news/2025/12/08/robotic-arm-made-in-north-texas-could-help-in-rehab-and-the-workplace/" target="_blank" rel="noopener">[Dallas Morning News]</a></div>
 </div>
 
 <div class="news-item">
@@ -61,19 +61,19 @@ With a background in Mechatronics and Industrial Engineering, I work at the inte
 
 <div class="news-item">
 <div class="news-date">May 2025</div>
-<div class="news-text">Published three research papers at the Institute of Industrial & Systems Engineers (IISE) Annual Conference and Expo 2025 — Atlanta, Georgia, USA.</div>
+<div class="news-text">Published three research papers at the Institute of Industrial & Systems Engineers (IISE) Annual Conference and Expo 2025 in Atlanta, Georgia, USA.</div>
 </div>
 
 <div class="news-item">
 <div class="news-date">April 2025</div>
-<div class="news-text">Won 2nd and 3rd place at the College of Engineering — Innovation Day 2025.</div>
+<div class="news-text">🏆 Won 2nd and 3rd place at the College of Engineering Innovation Day 2025.</div>
 </div>
 
 ### 2024
 
 <div class="news-item">
 <div class="news-date">September 2024</div>
-<div class="news-text">Presented at the ASPIRE — Human Factors and Ergonomics Society Conference 2024, Phoenix, Arizona, USA.</div>
+<div class="news-text">Presented at the ASPIRE Human Factors and Ergonomics Society Conference 2024 in Phoenix, Arizona, USA.</div>
 </div>
 
 <div class="news-item">
@@ -83,7 +83,7 @@ With a background in Mechatronics and Industrial Engineering, I work at the inte
 
 <div class="news-item">
 <div class="news-date">May 2024</div>
-<div class="news-text">Presented and published two research papers at the Institute of Industrial & Systems Engineers (IISE) Annual Conference and Expo 2024 — Montreal, Quebec, Canada.</div>
+<div class="news-text">Presented and published two research papers at the Institute of Industrial & Systems Engineers (IISE) Annual Conference and Expo 2024 in Montreal, Quebec, Canada.</div>
 </div>
 
 <div class="news-item">
@@ -93,24 +93,24 @@ With a background in Mechatronics and Industrial Engineering, I work at the inte
 
 <div class="news-item">
 <div class="news-date">April 2024</div>
-<div class="news-text">Received Certificate of Recognition for Outstanding Research Contribution for Spring 2024 (awarded by UTARI).</div>
+<div class="news-text">🏆 Received a Certificate of Recognition for Outstanding Research Contribution for Spring 2024 (awarded by UTARI).</div>
 </div>
 
 <div class="news-item">
 <div class="news-date">April 2024</div>
-<div class="news-text">Inducted into the prestigious Alpha Pi Mu — Industrial Engineering Honor Society.</div>
+<div class="news-text">🏆 Inducted into the prestigious Alpha Pi Mu Industrial Engineering Honor Society.</div>
 </div>
 
 <div class="news-item">
 <div class="news-date">March 2024</div>
-<div class="news-text">Received Maverick Advantage Distinction for overall accomplishments in research, leadership, and community engagement.</div>
+<div class="news-text">🏆 Received the Maverick Advantage Distinction for overall accomplishments in research, leadership, and community engagement.</div>
 </div>
 
 ### 2023
 
 <div class="news-item">
 <div class="news-date">November 2023</div>
-<div class="news-text">Received Certificate of Recognition for Outstanding Research Contribution for Fall 2023 (awarded by UTARI).</div>
+<div class="news-text">🏆 Received a Certificate of Recognition for Outstanding Research Contribution for Fall 2023 (awarded by UTARI).</div>
 </div>
 
 <div class="news-item">
@@ -120,17 +120,17 @@ With a background in Mechatronics and Industrial Engineering, I work at the inte
 
 <div class="news-item">
 <div class="news-date">May 2023</div>
-<div class="news-text">Started as a Research Assistant at Sensing, Analytics, & Intelligence Lab (SAIL) — under Dr. Chen Kan.</div>
+<div class="news-text">Started as a Research Assistant at Sensing, Analytics, & Intelligence Lab (SAIL) under Dr. Chen Kan.</div>
 </div>
 
 <div class="news-item">
 <div class="news-date">April 2023</div>
-<div class="news-text">Received the prestigious Elinor Paper Endowed Scholarship awarded to an Outstanding Industrial Engineering student.</div>
+<div class="news-text">🏆 Received the prestigious Elinor Paper Endowed Scholarship, awarded to an outstanding Industrial Engineering student.</div>
 </div>
 
 <div class="news-item">
 <div class="news-date">January 2023</div>
-<div class="news-text">Started as Research Assistant at Sustainable and Equitable Allocation of Resources (SEAR) Labs — under Dr. Erick C. Jones Jr.</div>
+<div class="news-text">Started as a Research Assistant at the Sustainable and Equitable Allocation of Resources (SEAR) Lab under Dr. Erick C. Jones Jr.</div>
 </div>
 
 ### 2022
