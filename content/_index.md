@@ -8,6 +8,8 @@ draft: false
 
 ## About
 
+<img src="/images/Eshwara_Headshot.jpeg" alt="Eshwara Prasad Sridhar" class="about-portrait">
+
 <p class="section-lead">I am a PhD student in Industrial Engineering at the University of Texas at Arlington, specializing in Human Factors and Human Computer Interaction, with a focus on Human AI Interaction and Human Robot Interaction within extended reality environments.</p>
 
 My research examines how people interact with intelligent and embodied systems across digital, physical, and immersive settings. I design and conduct human subjects studies to quantify behavior, perception, comfort, effort, and trust using a combination of experimental design, sensing technologies, and data-driven analysis.

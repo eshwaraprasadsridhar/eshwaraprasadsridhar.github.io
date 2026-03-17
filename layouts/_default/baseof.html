@@ -133,6 +133,35 @@
     .research-list > li::before{content:"";position:absolute;left:0;top:1.05rem;width:6px;height:6px;border:1px solid var(--text-secondary);border-radius:50%}
     .research-sublist{list-style:none;padding-left:0;margin:.35rem 0 0;color:var(--text-secondary);font-size:.95rem}
     .research-sublist li{padding:.15rem 0 0 0}
+
+    /* Portrait in About section */
+    .about-portrait{
+        float:right;
+        margin:0 0 1.25rem 2rem;
+        width:210px;
+        display:block;
+        -webkit-mask-image:radial-gradient(ellipse 88% 88% at 50% 50%, black 48%, transparent 100%);
+        mask-image:radial-gradient(ellipse 88% 88% at 50% 50%, black 48%, transparent 100%);
+    }
+    #about{overflow:hidden}
+    @media(max-width:600px){
+        .about-portrait{float:none;margin:0 auto 1.25rem;display:block;width:160px}
+    }
+
+    /* Publication label badges (J1, C3, etc.) */
+    .pub-label{
+        display:inline-block;
+        font-size:.78rem;
+        font-weight:700;
+        color:var(--bg-color);
+        background:var(--text-secondary);
+        border-radius:3px;
+        padding:.05rem .35rem;
+        margin-right:.45rem;
+        vertical-align:middle;
+        letter-spacing:.03em;
+        white-space:nowrap;
+    }
     </style>
 </head>
 <body>
