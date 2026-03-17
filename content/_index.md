@@ -40,7 +40,19 @@ With a background in Mechatronics and Industrial Engineering, I work at the inte
 
 ## News
 
+### 2026
+
+<div class="news-item">
+<div class="news-date">March 2026</div>
+<div class="news-text">🏆 Student of the Year, selected from international participants at the Applied Ergonomics Conference (AEC 2026), Arlington, Texas; delivered two oral presentations at this international conference. <a href="https://www.linkedin.com/posts/eshwaraprasad_aec2026-appliedergo2026-aec2026-activity-7438632784929210368-kbXJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB39OOkB8RPEghA9I5_5nicK1Qi4U35Ej2k" target="_blank" rel="noopener">[Link]</a></div>
+</div>
+
 ### 2025
+
+<div class="news-item">
+<div class="news-date">December 2025</div>
+<div class="news-text">Featured in national and international media for research on the Robotic Elbow Exoskeleton. <a href="https://www.dallasnews.com/news/2025/12/08/robotic-arm-made-in-north-texas-could-help-in-rehab-and-the-workplace/" target="_blank" rel="noopener">[Link]</a></div>
+</div>
 
 <div class="news-item">
 <div class="news-date">October 2025</div>
