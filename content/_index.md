@@ -43,6 +43,21 @@ With a background in Mechatronics and Industrial Engineering, I work at the inte
 ### 2026
 
 <div class="news-item">
+<div class="news-date">May 2026</div>
+<div class="news-text">🏆 Received the I-Engage Grant for Undergraduate Mentorship, including research funding support.</div>
+</div>
+
+<div class="news-item">
+<div class="news-date">April 2026</div>
+<div class="news-text">🏆 Won the Judges Choice Award for Best Research Project at UTA Innovation Day 2026, and the undergraduate student I mentored won 2nd place for Best Undergraduate Research Project.</div>
+</div>
+
+<div class="news-item">
+<div class="news-date">April 2026</div>
+<div class="news-text">Attended the Industry Innovation Summit 2026 at the SMU Lyle School of Engineering in Dallas, TX on the topic "Empowering Industry 5.0 with Human-Centered Agentic AI."</div>
+</div>
+
+<div class="news-item">
 <div class="news-date">March 2026</div>
 <div class="news-text">Received the "Student of the Year 🏆" Award, selected from international participants at the Applied Ergonomics Conference 2026 in Arlington, Texas; delivered two oral presentations at this international conference. <a href="https://www.linkedin.com/posts/eshwaraprasad_aec2026-appliedergo2026-aec2026-activity-7438632784929210368-kbXJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB39OOkB8RPEghA9I5_5nicK1Qi4U35Ej2k" target="_blank" rel="noopener">[Link]</a></div>
 </div>
