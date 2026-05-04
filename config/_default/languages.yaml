@@ -5,7 +5,7 @@ en:
   title: 'Eshwara Prasad Sridhar'
   
   params:
-    description: 'Ph.D. Student in Industrial Engineering at UT Arlington'
+    description: 'Ph.D. student in Industrial Engineering at UT Arlington researching human-AI interaction, human-robot interaction, wearable robotics, and extended reality training systems.'
     
   menu:
     main:
@@ -16,7 +16,5 @@ en:
         url: '/publications/'
         weight: 40
       - name: 'CV'
-        url: '/resume.pdf'
+        url: '/cv/'
         weight: 50
-        params:
-          external: true

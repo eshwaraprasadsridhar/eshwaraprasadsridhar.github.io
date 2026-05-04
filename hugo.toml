@@ -1,6 +1,7 @@
 baseURL = 'https://eshwaraprasadsridhar.github.io'
 languageCode = 'en-us'
 title = 'Eshwara Prasad Sridhar'
+disableKinds = ["taxonomy", "term"]
 
 # Build settings
 [pagination]
@@ -32,4 +33,4 @@ enableEmoji = true
 # Params
 [params]
   author = "Eshwara Prasad Sridhar"
-  description = "Ph.D. Student in Industrial Engineering at UT Arlington"
+  description = "Ph.D. student in Industrial Engineering at UT Arlington researching human-AI interaction, human-robot interaction, wearable robotics, and extended reality training systems."
